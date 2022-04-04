@@ -1,5 +1,5 @@
 {
-  "name": "foodventory",
+  "name": "pantrypal",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,24 +13,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EdCope/foodventory.git"
+    "url": "git+https://github.com/EdCope/pantrypal.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EdCope/foodventory/issues"
+    "url": "https://github.com/EdCope/pantrypal/issues"
   },
-  "homepage": "https://github.com/EdCope/foodventory#readme",
+  "homepage": "https://github.com/EdCope/pantrypal#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
-    "cypress": "^9.5.3",
     "express": "^4.17.3",
     "mongoose": "^6.2.9",
     "validation": "^0.0.1"
   },
   "devDependencies": {
+    "cypress": "^9.5.3",
     "eslint": "^8.12.0",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^27.5.1",
