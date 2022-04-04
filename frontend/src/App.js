@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {ListIngredients} from './components/listIngredients';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         >
           Powered by us, made by you!
         </a>
+        <ListIngredients />
       </header>
     </div>
   );
