@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {ListIngredients} from './components/listIngredients';
+import {AddIngredient} from './components/addIngredient';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         </div>
         
       </header>
+      <br />
+      <AddIngredient />
       <br />
       <ListIngredients />
     </div>
