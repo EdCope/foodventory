@@ -16,6 +16,13 @@ describe("Pantry model", () => {
     const pantry = new Pantry
     expect(pantry.ingredients.length).toEqual(0)
   })
+
+  it('can add 1 ingredient to the pantry', () => {
+    const pantry = new Pantry
+    pantry.ingredients.push('apple')
+    expect(pantry.ingredients.length).toEqual(1)
+    expect(pantry.ingredients).toEqual(['apple'])
+  })
 });
 
 
