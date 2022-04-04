@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const PantryController = require('../controllers/pantry');
+const PantriesController = require('../controllers/pantry');
 
-router.get('/', PantryController.Index);
+router.get('/', PantriesController.Index);
 
 module.exports = router;
