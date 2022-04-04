@@ -18,14 +18,17 @@ export class ListIngredients extends React.Component {
 
     render() {
         return (
-            <ul>
+            <div id="ingredients-list">
+            
+            <h5>Whats in my Pantry?</h5> 
+            <ul className="list-group">
             {
                 this.state.ingredients.map( ingredient => 
             
-                <li key={ingredient.id}>{ingredient.name}</li>
+                <li className="list-group-item" key={ingredient.id}>{ingredient.name}</li>
             )}
             </ul>
-
+            </div>
         )
     }
 
