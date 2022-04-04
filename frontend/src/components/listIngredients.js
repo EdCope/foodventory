@@ -18,6 +18,8 @@ export class ListIngredients extends React.Component {
 
     render() {
         return (
+            <div className="card">
+                <div className="card-body">
             <div id="ingredients-list">
             
             <h5>Whats in my Pantry?</h5> 
@@ -28,6 +30,8 @@ export class ListIngredients extends React.Component {
                 <li className="list-group-item" key={ingredient.id}>{ingredient.name}</li>
             )}
             </ul>
+            </div>
+            </div>
             </div>
         )
     }
