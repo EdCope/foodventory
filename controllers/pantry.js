@@ -17,7 +17,34 @@ const PantriesController = {
         res.json({'message': 'Pantry already created'})
       }
     })
+  },
+
+  Add: (req, res) => {
+    
+    Pantry.find({}).exec().then((pantries) => {
+      if (pantries.length === 0) {
+        const pantry = new Pantry;
+        pantry.ingredients.push(req.body.ingredient)
+        pantry.save((err) => {
+          if (err) {
+            throw err;
+          }
+          res.json({'message': `${req.body.ingredient} Added`})
+        });
+      }
+      else {
+        const pantry = pantries[0]
+        pantry.ingredients.push(req.body.ingredient)
+        pantry.save((err) => {
+          if (err) {
+            throw err;
+          }
+          res.json({'message': `${req.body.ingredient} Added`})
+        });
+      }
+    })
   }
+
 }
 
 module.exports = PantriesController
