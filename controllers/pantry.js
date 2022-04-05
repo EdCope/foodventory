@@ -6,7 +6,7 @@ const PantriesController = {
   Index: (req, res) => {
     Pantry.find({}).exec().then((pantries) => {
       if (pantries.length === 0) {
-        const pantry = new Pantry;w
+        const pantry = new Pantry;
 
         pantry.save((err) => {
           if (err) {
