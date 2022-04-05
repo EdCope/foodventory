@@ -1,11 +1,12 @@
 const Pantry = require("../models/pantry");
+const Ingredient = require("../models/ingredient")
 
 const PantriesController = { 
 
   Index: (req, res) => {
     Pantry.find({}).exec().then((pantries) => {
       if (pantries.length === 0) {
-        const pantry = new Pantry;
+        const pantry = new Pantry;w
 
         pantry.save((err) => {
           if (err) {
