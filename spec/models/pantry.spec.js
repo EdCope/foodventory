@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { isType } = require('validation');
+const Ingredient = require('../../models/ingredient');
 
 require("../mongodb_helper");
 
@@ -19,10 +19,13 @@ describe("Pantry model", () => {
 
   it('can add 1 ingredient to the pantry', async () => {
     const pantry = new Pantry
-    pantry.ingredients.push('apple')
+    const ingredient = new Ingredient({
+      name: 'Apple'
+    })
+    pantry.ingredients.push(ingredient)
     await pantry.save();
     expect(pantry.ingredients.length).toEqual(1)
-    expect(pantry.ingredients).toEqual(['apple'])
+    expect(pantry.ingredients).toEqual([ingredient])
   })
 });
 
