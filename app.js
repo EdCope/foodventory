@@ -2,7 +2,7 @@ const express = require('express');
 const testRouter = require('./routes/test');
 const pantryRouter = require('./routes/pantry')
 
-var cors = require('cors');
+const cors = require('cors');
 
 const app = express();
 

@@ -14,6 +14,7 @@ export const AddIngredient = () => {
 
     axios.post(`http://localhost:8000/pantry/add`, postData ).then((res) => {
       console.log(res)
+      setIngredient('')
     })
 
   }
@@ -22,15 +23,15 @@ export const AddIngredient = () => {
 
 
     return (
-      <div className="card">
+      <div className="card" id="input-form">
         <div className="card-body">
-        <form onSubmit={submitHandler}>
-          <div className="row">
-            <div className="col-10">
-            <input className="form-control" type="text" name="ingredint" value={ingredient} onChange={(e)=>{setIngredient(e.target.value)}}></input>
+        <form onSubmit={submitHandler} id="ingredient-form">
+          <div className="row form-row">
+            <div className="col-md-10 col-sm-10 form-group">
+            <input className="form-control" type="text" name="ingredient" value={ingredient} onChange={(e) => {setIngredient(e.target.value)}}></input>
             </div>
-            <div className="col-2">
-              <button className='btn btn-primary' type="submit">Add Ingredient</button>
+            <div className="col-md-2 col-sm-2 form-group">
+              <button className='btn btn-primary' id="ingredient-button" type="submit">Add Ingredient</button>
             </div>
           </div>
         </form>

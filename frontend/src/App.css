@@ -21,3 +21,12 @@
     transform: rotate(360deg);
   }
 }
+
+#input-form {
+  display: flex !important;
+}
+
+#ingredient-button {
+  display: flex !important;
+  word-wrap: break-word !important;
+}
