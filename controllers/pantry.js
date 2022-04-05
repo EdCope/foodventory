@@ -19,6 +19,33 @@ const PantriesController = {
       }
     })
   },
+
+  Add: (req, res) => {
+    
+    Pantry.find({}).exec().then((pantries) => {
+      if (pantries.length === 0) {
+        const pantry = new Pantry;
+        pantry.ingredients.push(req.body.ingredient)
+        pantry.save((err) => {
+          if (err) {
+            throw err;
+          }
+          res.json({'message': `${req.body.ingredient} successfully added`})
+        });
+      }
+      else {
+        const pantry = pantries[0]
+        pantry.ingredients.push(req.body.ingredient)
+        pantry.save((err) => {
+          if (err) {
+            throw err;
+          }
+          res.json({'message': `${req.body.ingredient} successfully added`})
+        });
+      }
+    })
+  },
+
   GetAllIngredients: async (req, res) => {
     try{
       const pantries = await Pantry.find({})
@@ -28,6 +55,7 @@ const PantriesController = {
       throw err;
     }
   }
+
 }
 
 module.exports = PantriesController
