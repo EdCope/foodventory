@@ -29,7 +29,7 @@ const PantriesController = {
           if (err) {
             throw err;
           }
-          res.json({'message': `${req.body.ingredient} Added`})
+          res.json({'message': `${req.body.ingredient} successfully added`})
         });
       }
       else {
@@ -39,7 +39,7 @@ const PantriesController = {
           if (err) {
             throw err;
           }
-          res.json({'message': `${req.body.ingredient} Added`})
+          res.json({'message': `${req.body.ingredient} successfully added`})
         });
       }
     })

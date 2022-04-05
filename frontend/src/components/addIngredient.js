@@ -1,25 +1,27 @@
+import { IngredientMessage } from './ingredientMessage';
 import axios from 'axios';
 import React, {useState} from 'react';
 
 export const AddIngredient = () => {
-
+  
+  // let message
+  
   const [ingredient, setIngredient] = useState('')
-
+  const [message, setMessage] = useState('')
+  
   const submitHandler = (e) => {
-
+    
     e.preventDefault()
-
+    
     const postData = {ingredient}
     console.log(postData)
-
-    axios.post(`http://localhost:8000/pantry/add`, postData ).then((res) => {
-      console.log(res)
-      setIngredient('')
-    })
-
-  }
-  
-  
+    
+     axios.post(`http://localhost:8000/pantry/add`, postData ).then((res) => {
+        console.log(res)
+        setIngredient('')
+        setMessage(res.data.message)
+      })
+    }
 
 
     return (
@@ -35,7 +37,8 @@ export const AddIngredient = () => {
             </div>
           </div>
         </form>
+        <IngredientMessage message={message} />
         </div>
       </div>
     )
-  }
+    }
