@@ -21,7 +21,8 @@ const PantriesController = {
   GetAllIngredients: async (req, res) => {
     try{
       const pantries = await Pantry.find({})
-      console.log(pantries[0])
+      .populate('ingredient')
+      console.log(pantries)
       res.json(pantries[0].ingredients)
     } catch (err){
       throw err;

@@ -18,14 +18,18 @@ describe("Pantry model", () => {
   })
 
   it('can add 1 ingredient to the pantry', async () => {
-    const pantry = new Pantry
     const ingredient = new Ingredient({
       name: 'Apple'
     })
+    await ingredient.save();
+    const pantry = new Pantry
     pantry.ingredients.push(ingredient)
+    // pantry.populate('ingredient');
+    Pantry.populate(pantries, { path: 'ingredient', select: 'name' });
+    // this.Ingredient.findOne({ _id: userId }).exec();
     await pantry.save();
     expect(pantry.ingredients.length).toEqual(1)
-    expect(pantry.ingredients).toEqual([ingredient])
+    expect(pantry.ingredients).toContain([ingredient])
   })
 });
 

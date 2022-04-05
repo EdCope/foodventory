@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const PantrySchema = new mongoose.Schema({
-  ingredients: Array
+  ingredients: [{ type: mongoose.Schema.Types.ObjectId, ref: "ingredient" }]
 })
 
 const Pantry = mongoose.model("Pantry", PantrySchema);
