@@ -3,7 +3,6 @@ const Pantry = require("../models/pantry");
 const PantriesController = { 
 
   Index: (req, res) => {
-
     Pantry.find({}).exec().then((pantries) => {
       if (pantries.length === 0) {
         const pantry = new Pantry;
@@ -21,9 +20,9 @@ const PantriesController = {
   },
   GetAllIngredients: async (req, res) => {
     try{
-      console.log(pantries)
       const pantries = await Pantry.find({})
-      res.json(pantries.first().ingredients)
+      console.log(pantries[0])
+      res.json(pantries[0].ingredients)
     } catch (err){
       throw err;
     }
