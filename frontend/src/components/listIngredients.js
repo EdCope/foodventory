@@ -10,7 +10,7 @@ export class ListIngredients extends React.Component {
 
 
     componentDidMount() {
-        axios.get(`http://localhost:8000/`).then(res => {
+        axios.get(`http://localhost:8000/pantry/all`).then(res => {
             const ingredients = res.data;
             this.setState({ingredients})
         })
@@ -25,9 +25,9 @@ export class ListIngredients extends React.Component {
             <h5>Whats in my Pantry?</h5> 
             <ul className="list-group">
             {
-                this.state.ingredients.map( ingredient => 
+                this.state.ingredients.map( (ingredient, i) => 
             
-                <li className="list-group-item" key={ingredient.id}>{ingredient.name}</li>
+                <li className="list-group-item" key={i}>{ingredient}</li>
             )}
             </ul>
             </div>
