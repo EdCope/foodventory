@@ -30,3 +30,7 @@
   display: flex !important;
   word-wrap: break-word !important;
 }
+
+.hidden {
+  display: none;
+}

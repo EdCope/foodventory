@@ -1,6 +1,6 @@
 import './App.css';
 import {ListIngredients} from './components/listIngredients';
-import {AddIngredient} from './components/addIngredient';
+import {SearchRecipe} from './components/searchReceipe';
 
 function App() {
   return (
@@ -18,6 +18,8 @@ function App() {
       
       <br />
       <ListIngredients />
+      <br />
+      <SearchRecipe />
     </div>
   );
 }
