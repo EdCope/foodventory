@@ -1,5 +1,5 @@
 describe('Homepage', () => {
-  it('has a title', () => {
+  it('has a sign-up form', () => {
     cy.visit('/')
     cy.contains('Pantrypal')
   })
