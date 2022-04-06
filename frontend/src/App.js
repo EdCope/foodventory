@@ -1,27 +1,20 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import {ListIngredients} from './components/listIngredients';
-import {AddIngredient} from './components/addIngredient';
-import {SignUp} from './components/signUp'
+import {Layout} from './pages/Layout'
+import {Home} from './pages/Home'
+import {Signup} from './pages/Signup'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-        <h4>
-          Pantrypal
-        </h4>
-        <h5>Powered by us, made by you!</h5>
-        </div>
-        
-      </header>
-      
-      <br />
-      <SignUp />
-      <br />
-      <ListIngredients />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="signup" element={<Signup />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

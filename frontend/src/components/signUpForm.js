@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs'
 
 const salt = bcrypt.genSaltSync(10)
 
-export const SignUp = () => {
+export const SignUpForm = () => {
   
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
