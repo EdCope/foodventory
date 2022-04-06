@@ -1,4 +1,4 @@
-import { IngredientMessage } from './ingredientMessage';
+import { ConfirmationMessage } from './confirmationMessage';
 import axios from 'axios';
 import React, {useState} from 'react';
 
@@ -6,7 +6,6 @@ export const AddIngredient = (props) => {
 
   const [ingredient, setIngredient] = useState('')
   const [message, setMessage] = useState('')
-  
   
   const submitHandler = (e) => {
     e.preventDefault()
@@ -35,7 +34,7 @@ export const AddIngredient = (props) => {
             </div>
           </div>
         </form>
-        <IngredientMessage message={message} />
+        <ConfirmationMessage message={message} />
         </div>
       </div>
     )
