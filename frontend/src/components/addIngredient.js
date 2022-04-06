@@ -28,7 +28,7 @@ export const AddIngredient = (props) => {
         <form onSubmit={submitHandler} id="ingredient-form">
           <div className="row form-row">
             <div className="col-md-10 col-sm-10 form-group">
-            <input className="form-control" type="text" name="ingredient" value={ingredient} onChange={(e) => {setIngredient(e.target.value)}}></input>
+            <input className="form-control" type="text" name="ingredient" id="ingredient-input" value={ingredient} onChange={(e) => {setIngredient(e.target.value)}}></input>
             </div>
             <div className="col-md-2 col-sm-2 form-group">
               <button className='btn btn-primary' id="ingredient-button" type="submit">Add Ingredient</button>
