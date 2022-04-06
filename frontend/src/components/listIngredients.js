@@ -1,40 +1,38 @@
 import axios from "axios";
-import React from "react";
-
-export class ListIngredients extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {ingredients:[]};
-      }
+import React, { useState, useEffect } from "react";
+import { AddIngredient } from './addIngredient';
 
 
-    componentDidMount() {
-        axios.get(`http://localhost:8000/pantry/all`).then(res => {
-            const ingredients = res.data;
-            this.setState({ingredients})
-        })
-    }
+export const ListIngredients = () => {
+  const [ingredients, setIngredients] = useState([]);
 
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-            <div id="ingredients-list">
-            
-            <h5>Whats in my Pantry?</h5> 
-            <ul className="list-group">
-            {
-                this.state.ingredients.map( (ingredient, i) => 
-            
-                <li className="list-group-item" key={i}>{ingredient}</li>
-            )}
-            </ul>
-            </div>
-            </div>
-            </div>
-        )
-    }
+  const loadList = () => {
+    axios.get(`http://localhost:8000/pantry/all`).then((res) => {
+      const data = res.data;
+      setIngredients( data );
+    });
+  };
+  
+  useEffect(() => {
+    loadList();
+  }, []);
 
-
-}
+  return (
+    <div className="card">
+      <AddIngredient loadList={loadList} />
+      <div className="card-body">
+        <div id="ingredients-list">
+          <h5>Whats in my Pantry?</h5>
+          <ul className="list-group">
+            {ingredients.map((ingredient, i) => (
+              <li className="list-group-item" key={i}>
+                {ingredient}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  );
+};

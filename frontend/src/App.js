@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {ListIngredients} from './components/listIngredients';
 import {AddIngredient} from './components/addIngredient';
@@ -16,7 +15,7 @@ function App() {
         
       </header>
       <br />
-      <AddIngredient />
+      
       <br />
       <ListIngredients />
     </div>

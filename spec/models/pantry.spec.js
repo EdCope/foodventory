@@ -4,8 +4,6 @@ const Pantry = require("../../models/pantry");
 
 require("../mongodb_helper");
 
-
-
 describe("Pantry model", () => {
   beforeEach((done) => {
     mongoose.connection.collections.pantries.drop(() => {
