@@ -5,6 +5,7 @@ describe('searching of a recipe using ingredients', () => {
         cy.get("#ingredient-button").click()
         cy.get('#ingredients-list').should("contain", "Bread")
         cy.get("#recipe-search").click()
-        cy.get('#recipe-list').should("have.length", 5)
+        cy.wait(2000)
+        cy.get('#recipe-list').children('li').should("have.length", 20)
     })
 })
