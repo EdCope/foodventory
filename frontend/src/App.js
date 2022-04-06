@@ -1,6 +1,7 @@
 import './App.css';
 import {ListIngredients} from './components/listIngredients';
 import {AddIngredient} from './components/addIngredient';
+import {SignUp} from './components/signUp'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       </header>
       
       <br />
-      
+      <SignUp />
       <br />
       <ListIngredients />
     </div>
