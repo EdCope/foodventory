@@ -25,7 +25,9 @@ export const SearchRecipe = () => {
     }
 
     return(
-    <div> <button type="button" className="btn btn-success" id="recipe-search" onClick={getListValue}>Search For Recipe</button>
+    <div> 
+    <button type="button" className="btn btn-success mb-3" id="recipe-search" onClick={getListValue}>Search For Recipe</button>
+
         <RecipeList recipes={recipes} />
         </div>
     )
