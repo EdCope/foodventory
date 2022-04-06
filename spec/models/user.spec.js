@@ -17,4 +17,12 @@ describe("User model", () => {
     expect(user.email).toEqual('test@test.com')
   })
 
+  it("user has a password", () => {
+    const user = new User({
+      email: 'test@test.com',
+      password: '$2a$12$ccAirt0cv9bFCRk.SnD0Bef3n1tgzbkwz2R/V3MfYm88QjXwlZ5G6'
+    })
+    expect(user.password).toEqual('$2a$12$ccAirt0cv9bFCRk.SnD0Bef3n1tgzbkwz2R/V3MfYm88QjXwlZ5G6')
+  })
+
 });
