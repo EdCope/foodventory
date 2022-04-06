@@ -18,8 +18,10 @@ export const ListIngredients = () => {
   }, []);
 
   return (
-    <div className="card">
+    <div>
       <AddIngredient loadList={loadList} />
+      <div className="card mt-3">
+      
       <div className="card-body">
         <div id="ingredients-list">
           <h5>Whats in my Pantry?</h5>
@@ -34,5 +36,7 @@ export const ListIngredients = () => {
       </div>
       
     </div>
+    </div>
+    
   );
 };
