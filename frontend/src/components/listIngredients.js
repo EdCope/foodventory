@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { AddIngredient } from './addIngredient';
+
 
 export const ListIngredients = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -17,6 +19,7 @@ export const ListIngredients = () => {
 
   return (
     <div className="card">
+      <AddIngredient loadList={loadList} />
       <div className="card-body">
         <div id="ingredients-list">
           <h5>Whats in my Pantry?</h5>
@@ -29,6 +32,7 @@ export const ListIngredients = () => {
           </ul>
         </div>
       </div>
+      
     </div>
   );
 };

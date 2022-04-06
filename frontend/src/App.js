@@ -15,7 +15,7 @@ function App() {
         
       </header>
       <br />
-      <AddIngredient />
+      
       <br />
       <ListIngredients />
     </div>
