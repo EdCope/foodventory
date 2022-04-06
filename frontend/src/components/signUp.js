@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { ConfirmationMessage } from './confirmationMessage'
 
+import bcrypt from 'bcryptjs'
+
+const salt = bcrypt.genSaltSync(10)
+
 export const SignUp = () => {
   
   const [email, setEmail] = useState('')
@@ -18,7 +22,8 @@ export const SignUp = () => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    const postData = { email, password }
+    const hashedPassword = bcrypt.hashSync(password, salt)
+    const postData = { email: email, password: hashedPassword }
     axios.post(`http://localhost:8000/user/`, postData ).then((res) => {
         console.log(res);
         setEmail('');
