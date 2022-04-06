@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
 const Ingredient = require('../../models/ingredient');
+const Pantry = require("../../models/pantry");
 
 require("../mongodb_helper");
-
-const Pantry = require("../../models/pantry");
 
 describe("Pantry model", () => {
   beforeEach((done) => {
@@ -21,12 +20,11 @@ describe("Pantry model", () => {
     const ingredient = new Ingredient({
       name: 'Apple'
     })
-    await ingredient.save();
+    console.log('ingredient', ingredient)
     const pantry = new Pantry
+    await ingredient.save();
     pantry.ingredients.push(ingredient)
-    // pantry.populate('ingredient');
-    Pantry.populate(pantries, { path: 'ingredient', select: 'name' });
-    // this.Ingredient.findOne({ _id: userId }).exec();
+    pantry.populate('ingredients');
     await pantry.save();
     expect(pantry.ingredients.length).toEqual(1)
     expect(pantry.ingredients).toContain([ingredient])
@@ -34,15 +32,14 @@ describe("Pantry model", () => {
 
   it('can delete 1 ingredient from the pantry', async () => {
     const ingredient = new Ingredient({
-      name: 'Banana'
+      name: 'Apple'
     })
-    await ingredient.save();
+    console.log('ingredient', ingredient)
     const pantry = new Pantry
+    await ingredient.save();
     pantry.ingredients.push(ingredient)
-    Pantry.populate(pantries, { path: 'ingredient', select: 'name' });
+    pantry.populate('ingredients');
     await pantry.save();
-
-
   })
 });
 

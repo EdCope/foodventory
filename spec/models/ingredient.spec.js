@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
-
-require("../mongodb_helper");
-
 const Ingredient = require("../../models/ingredient");
 
+require("../mongodb_helper");
 
 describe("Ingredient model", () => {
   beforeEach((done) => {
@@ -13,12 +11,9 @@ describe("Ingredient model", () => {
   });
 
   it("should have a name", async () => {
-    const ingredient = new Ingredient
-    ({
-      name: 'Apple'
-    })
+    const ingredient = new Ingredient({ name: 'Apple' })
     await ingredient.save()
-    expect(ingredient.name).toEqual ('Apple')
+    expect(ingredient.name).toEqual('Apple')
   })
 
 })
