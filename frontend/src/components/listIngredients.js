@@ -18,12 +18,14 @@ export const ListIngredients = () => {
   }, []);
 
   return (
-    <div className="card">
+    <div>
       <AddIngredient loadList={loadList} />
+      <div className="card mt-3">
+      
       <div className="card-body">
         <div id="ingredients-list">
           <h5>Whats in my Pantry?</h5>
-          <ul className="list-group">
+          <ul className="list-group" id="ingredientsList">
             {ingredients.map((ingredient, i) => (
               <li className="list-group-item" key={i}>
                 {ingredient}
@@ -34,5 +36,7 @@ export const ListIngredients = () => {
       </div>
       
     </div>
+    </div>
+    
   );
 };
