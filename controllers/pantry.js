@@ -54,10 +54,9 @@ const PantriesController = {
     } catch (err){
       throw err;
     }
-  }
+  }  
 
 
-  //https://api.edamam.com/api/recipes/v2?type=public&q=chicken%20potato&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc
 }
 
 module.exports = PantriesController
