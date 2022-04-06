@@ -31,6 +31,19 @@ describe("Pantry model", () => {
     expect(pantry.ingredients.length).toEqual(1)
     expect(pantry.ingredients).toContain([ingredient])
   })
+
+  it('can delete 1 ingredient from the pantry', async () => {
+    const ingredient = new Ingredient({
+      name: 'Banana'
+    })
+    await ingredient.save();
+    const pantry = new Pantry
+    pantry.ingredients.push(ingredient)
+    Pantry.populate(pantries, { path: 'ingredient', select: 'name' });
+    await pantry.save();
+
+
+  })
 });
 
 
