@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 import GlobalState from './contexts/GlobalState';
 
 function App() {
-  const [state, setState] = useState({loggedIn: false, token: {}})
+  const [state, setState] = useState({loggedIn: false, token: '', uid: ''})
   return (
     <GlobalState.Provider value={[state, setState]}>
     <BrowserRouter>
