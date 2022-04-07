@@ -27,7 +27,7 @@ const PantriesController = {
       .then((pantries) => {
         if (pantries.length === 0) {
           const pantry = new Pantry();
-          const ingredient = new Ingredient(req.body.ingredient)
+          const ingredient = new Ingredient({name:req.body.ingredient})
           ingredient.save()
           console.log('the req.body.ingredient is saved as: ', req.body.ingredient)
           pantry.ingredients.push(ingredient);
@@ -39,7 +39,7 @@ const PantriesController = {
           });
         } else {
           const pantry = pantries[0];
-          const ingredient = new Ingredient(req.body)
+          const ingredient = new Ingredient({name:req.body.ingredient})
           ingredient.save((err) => {
             if (err) {
               throw err;

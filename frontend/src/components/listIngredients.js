@@ -29,7 +29,7 @@ export const ListIngredients = () => {
             {console.log('the ingredients array is: ',ingredients)}
             {ingredients.map((ingredient, i) => (
               <li className="list-group-item" key={i}>
-                {ingredient}
+                {ingredient.name}
               </li>
             ))}
           </ul>
