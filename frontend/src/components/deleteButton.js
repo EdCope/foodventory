@@ -9,7 +9,7 @@ export const DeleteIngredientButton = (props) => {
         props.loadList()
         props.setMessage(res.data.message)
     })
-    
+    //'to be deleted'
     }
     return <button id="ingredient-delete" type="button" className="btn btn-danger" onClick={clickHandler}>X</button>
 }
