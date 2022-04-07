@@ -1,11 +1,9 @@
-import { ConfirmationMessage } from './confirmationMessage';
 import axios from 'axios';
 import React, {useState} from 'react';
 
 export const AddIngredient = (props) => {
 
   const [ingredient, setIngredient] = useState('')
-  const [message, setMessage] = useState('')
   
   const submitHandler = (e) => {
     e.preventDefault()
@@ -14,7 +12,7 @@ export const AddIngredient = (props) => {
     axios.post(`http://localhost:8000/pantry/add`, postData ).then((res) => {
         console.log(res)
         setIngredient('')
-        setMessage(res.data.message)
+        props.setMessage(res.data.message)
         props.loadList();
       })
       
@@ -34,7 +32,6 @@ export const AddIngredient = (props) => {
             </div>
           </div>
         </form>
-        <ConfirmationMessage message={message} />
         </div>
       </div>
     )
