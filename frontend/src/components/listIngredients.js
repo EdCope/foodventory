@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { AddIngredient } from './addIngredient';
-
+import { DeleteIngredientButton } from "./deleteButton";
 
 export const ListIngredients = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -28,7 +28,7 @@ export const ListIngredients = () => {
           <ul className="list-group" id="ingredientsList">
             {ingredients.map((ingredient, i) => (
               <li className="list-group-item" key={i}>
-                {ingredient} <button type="button" className="btn btn-danger">X</button>
+                {ingredient} < DeleteIngredientButton ingredient={ingredient} loadList={loadList}/>
               </li>
             ))}
           </ul>

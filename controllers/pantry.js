@@ -5,7 +5,7 @@ const PantriesController = {
   Add: (req, res) => {
     Pantry.find({})
       .exec()
-      .then(() => {
+      .then((pantries) => {
         if (pantries.length === 0) {
           const pantry = new Pantry();
           pantry.ingredients.push(req.body.ingredient);
@@ -15,7 +15,7 @@ const PantriesController = {
             }
             res.json({ message: `${req.body.ingredient} successfully added` });
           });
-        } else if (pantries[0].ingredient.not.contain(req.body.ingredient)) {
+        } else if (!pantries[0].ingredients.includes(req.body.ingredient)) {
           const pantry = pantries[0];
           pantry.ingredients.push(req.body.ingredient);
           pantry.save((err) => {
@@ -33,9 +33,11 @@ const PantriesController = {
   Remove: (req, res) => {
     Pantry.find({})
       .exec()
-      .then(() => {
-          pantry.ingredients.remove(req.body.ingredient);
-          pantry.save((err) => {
+      .then((pantry) => {
+        console.log(req.body)
+          pantry[0].ingredients.remove(req.body.ingredient);
+          
+          pantry[0].save((err) => {
             if (err) {
               throw err;
             }
@@ -47,11 +49,11 @@ const PantriesController = {
 
   GetAllIngredients: async (req, res) => {
     try {
+      console.log('here')
       const pantries = await Pantry.find({});
-      console.log(pantries[0]);
       res.json(pantries[0].ingredients);
-      console.log(pantries[0].ingredients)
     } catch (err) {
+      console.log('error')
       throw err;
     }
   },
