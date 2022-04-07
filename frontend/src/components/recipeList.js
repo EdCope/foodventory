@@ -30,7 +30,7 @@ export const RecipeList = (props) => {
                   onClick={handleChange}
                 >
                   {recipe.recipe.label}
-                  <div id={recipe.recipe.label} className='hidden mt-3'>
+                  <div id={`${recipe.recipe.label}-${i}`} className='hidden mt-3'>
                     <div className='row'>
                       <div className='col-2'>
                         <img
