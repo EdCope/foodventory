@@ -15,10 +15,7 @@ export const AddIngredient = (props) => {
         props.setMessage(res.data.message)
         props.loadList();
       })
-      
     }
-
-
     return (
       <div className="card" id="input-form">
         <div className="card-body">

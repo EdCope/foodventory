@@ -21,6 +21,7 @@ export const ListIngredients = () => {
   return (
     <div>
       <AddIngredient loadList={loadList} setMessage={setMessage} />
+      <br></br>
       <ConfirmationMessage message={message} />
       <div className="card mt-3">
       
