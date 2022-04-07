@@ -38,3 +38,4 @@ For this project we are using:
 - [ESLint](https://eslint.org) for linting.
 - [Prettier](https://prettier.io/) for formatting.
 - [Bcrypt](https://www.npmjs.com/package/bcrypt) for password encyption 
+- Using npm install supertest --save-dev for testing route/controller

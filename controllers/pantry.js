@@ -2,25 +2,6 @@ const Pantry = require('../models/pantry');
 const Ingredient = require('../models/ingredient');
 
 const PantriesController = {
-  Index: (req, res) => {
-    Pantry.find({})
-      .exec()
-      .then((pantries) => {
-        if (pantries.length === 0) {
-          const pantry = new Pantry();
-
-          pantry.save((err) => {
-            if (err) {
-              throw err;
-            }
-            res.json({ message: 'Pantry created' });
-          });
-        } else {
-          res.json({ message: 'Pantry already created' });
-        }
-      });
-  },
-
   Add: (req, res) => {
     Pantry.find({})
       .exec()
@@ -34,7 +15,7 @@ const PantriesController = {
             }
             res.json({ message: `${req.body.ingredient} successfully added` });
           });
-        } else {
+        } else if (pantries[0].ingredient.not.contain(req.body.ingredient)) {
           const pantry = pantries[0];
           pantry.ingredients.push(req.body.ingredient);
           pantry.save((err) => {
@@ -43,6 +24,8 @@ const PantriesController = {
             }
             res.json({ message: `${req.body.ingredient} successfully added` });
           });
+        } else {
+          res.json({ message: `${req.body.ingredient} already in pantry.` })
         }
       });
   },
@@ -51,7 +34,6 @@ const PantriesController = {
     Pantry.find({})
       .exec()
       .then(() => {
-        if (pantries.length > 0 && pantry.ingredients.length > 0) {
           pantry.ingredients.remove(req.body.ingredient);
           pantry.save((err) => {
             if (err) {
@@ -59,15 +41,6 @@ const PantriesController = {
             }
             res.json({ message: `${req.body.ingredient} successfully removed` });
           });
-        } else {
-          pantry.ingredients.remove(req.body.ingredient);
-          pantry.save((err) => {
-            if (err) {
-              throw err;
-            }
-            res.json({ message: `${req.body.ingredient} successfully removed` });
-          });
-        }
       });
   },
 
@@ -77,6 +50,7 @@ const PantriesController = {
       const pantries = await Pantry.find({});
       console.log(pantries[0]);
       res.json(pantries[0].ingredients);
+      console.log(pantries[0].ingredients)
     } catch (err) {
       throw err;
     }

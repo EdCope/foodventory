@@ -20,28 +20,28 @@ describe("Pantry model", () => {
     const ingredient = new Ingredient({
       name: 'Apple'
     })
-    console.log('ingredient', ingredient)
     const pantry = new Pantry
     await ingredient.save();
     pantry.ingredients.push(ingredient)
-    pantry.populate('ingredients');
+    //pantry.populate('ingredients');
     await pantry.save();
     expect(pantry.ingredients.length).toEqual(1)
     expect(pantry.ingredients).toContain(ingredient)
   })
 
+
+
   it('can delete 1 ingredient from the pantry', async () => {
     const ingredient = new Ingredient({
       name: 'Banana'
     })
-    console.log('ingredient', ingredient)
     const pantry = new Pantry
     await ingredient.save();
     pantry.ingredients.push(ingredient)
-    pantry.populate('ingredients');
+    //pantry.populate('ingredients');
     await pantry.save();
     pantry.ingredients.remove(ingredient)
-    pantry.populate('ingredients');
+    //pantry.populate('ingredients');
     await pantry.save();
     expect(pantry.ingredients.length).toEqual(0)
     expect(pantry.ingredients).not.toContain(ingredient)

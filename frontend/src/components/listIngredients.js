@@ -28,7 +28,7 @@ export const ListIngredients = () => {
           <ul className="list-group" id="ingredientsList">
             {ingredients.map((ingredient, i) => (
               <li className="list-group-item" key={i}>
-                {ingredient}
+                {ingredient} <button type="button" className="btn btn-danger">X</button>
               </li>
             ))}
           </ul>
