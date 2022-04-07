@@ -40,6 +40,7 @@ const PantriesController = {
         } else {
           const pantry = pantries[0];
           const ingredient = new Ingredient({name:req.body.ingredient})
+          console.log(ingredient.type)
           ingredient.save((err) => {
             if (err) {
               throw err;
