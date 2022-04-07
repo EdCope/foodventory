@@ -27,7 +27,10 @@ const PantriesController = {
       .then((pantries) => {
         if (pantries.length === 0) {
           const pantry = new Pantry();
-          pantry.ingredients.push(req.body.ingredient);
+          const ingredient = new Ingredient(req.body.ingredient)
+          ingredient.save()
+          console.log('the req.body.ingredient is saved as: ', req.body.ingredient)
+          pantry.ingredients.push(ingredient);
           pantry.save((err) => {
             if (err) {
               throw err;
@@ -36,7 +39,14 @@ const PantriesController = {
           });
         } else {
           const pantry = pantries[0];
-          pantry.ingredients.push(req.body.ingredient);
+          const ingredient = new Ingredient(req.body)
+          ingredient.save((err) => {
+            if (err) {
+              throw err;
+            }
+          });
+          console.log('the req.body.ingredient is saved as: ', req.body)
+          pantry.ingredients.push(ingredient);
           pantry.save((err) => {
             if (err) {
               throw err;
@@ -50,7 +60,8 @@ const PantriesController = {
   GetAllIngredients: async (req, res) => {
     try {
       const pantries = await Pantry.find({});
-      console.log(pantries[0]);
+      // console.log(pantries[0]);
+      console.log('pantry.ingredients is: ', pantries[0].ingredients)
       res.json(pantries[0].ingredients);
     } catch (err) {
       throw err;
