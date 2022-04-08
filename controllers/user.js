@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const Pantry = require("../models/pantry")
+const Pantry = require("../models/pantry");
 
 const UsersController = { 
 
@@ -15,6 +15,10 @@ const UsersController = {
     } catch (err) {
         res.json({'message': err})
     }
+  },
+
+  AddFavourite: (req, res) => {
+    
   }
     
 }
