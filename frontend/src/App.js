@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import { Signup } from './pages/Signup';
 import { Login } from './pages/Login';
 import { Pantry } from './pages/Pantry';
+import { Favourites } from './pages/Favourites';
 import React, { useState } from 'react';
 import GlobalState from './contexts/GlobalState';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
           <Route path="pantry" element={<Pantry />} />
+          <Route path="favourites" element={<Favourites />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>

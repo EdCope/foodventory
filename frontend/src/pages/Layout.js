@@ -22,6 +22,8 @@ export const Layout = () => {
           <br/>
           {!state.loggedIn && <Link to="/login">Login</Link>}
           <br/>
+          {state.loggedIn && <Link to="/favourites">Favourites</Link>}
+          <br/>
           {state.loggedIn && <SignOutButton />}
           <br/>
         </div>
