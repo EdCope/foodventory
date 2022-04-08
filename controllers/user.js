@@ -18,7 +18,14 @@ const UsersController = {
   },
 
   AddFavourite: (req, res) => {
-    
+    User.findOne({
+      email: 'test@test'
+    }).then((user) => {
+      console.log('this is the user', user),
+      user.favourites.push(req.body)
+      console.log('this is the req.body', req)
+      user.save()
+    })
   }
     
 }

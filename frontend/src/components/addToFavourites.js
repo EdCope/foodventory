@@ -3,11 +3,9 @@ import { useState } from "react"
 
 export const AddToFavourites = (props) => {
 
-  const favouritesArray = []
-
   const clickHandler = (e) => {
     e.preventDefault()
-    const postData = props.recipeId
+    const postData = {favourite: props.recipeId}
     console.log('this is the post Data', postData)
     axios.post(`http://localhost:8000/user/add`, postData ).then((res) => {
         console.log('this is the post result', res)
