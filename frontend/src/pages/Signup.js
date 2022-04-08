@@ -9,8 +9,12 @@ export const Signup = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('userdata'))
+    if(user !== null){
+      setState(state => ({...state, loggedIn: user.auth}));
+    }
     if(state.loggedIn){
-      navigate('/');
+      navigate('/Pantry');
     }
   }, [state.loggedIn])
 

@@ -1,6 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
+import { SignOutButton } from "../components/signOutButton";
+import GlobalState from '../contexts/GlobalState';
+import React, { useContext } from 'react';
 
 export const Layout = () => {
+  const [state, setState] = useContext(GlobalState);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -13,9 +18,12 @@ export const Layout = () => {
           </h5>
           <Link to="/">Home</Link>
           <br/>
-          <Link to="/signup">Sign Up</Link>
+          {!state.loggedIn && <Link to="/signup">Sign Up</Link>}
           <br/>
-          <Link to="/login">Login</Link>
+          {!state.loggedIn && <Link to="/login">Login</Link>}
+          <br/>
+          {state.loggedIn && <SignOutButton />}
+          <br/>
         </div>
       </header>
       <Outlet />
