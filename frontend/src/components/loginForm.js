@@ -43,22 +43,22 @@ export const LoginForm = () => {
 
         <h2>Log In</h2>
       <form onSubmit={submitHandler}>
-        <div class="form-group">
-          <label for="email-form">Email address</label>
+        <div className="form-group">
+          <label htmlFor="email-form">Email address</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="email-form"
             aria-describedby="emailHelp"
             value={email}
             onChange={handleChange}
           ></input>
         </div>
-        <div class="form-group">
-          <label for="password-form">Password</label>
+        <div className="form-group">
+          <label htmlFor="password-form">Password</label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="password-form"
             value={password}
             onChange={handleChange}
