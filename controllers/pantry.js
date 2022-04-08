@@ -1,5 +1,6 @@
 const Pantry = require("../models/pantry");
 const Ingredient = require("../models/ingredient");
+const User = require("../models/user");
 
 const PantriesController = {
   Add: (req, res) => {
@@ -34,6 +35,7 @@ const PantriesController = {
                   }
                 });
                 pantry.ingredients.push(ingredient);
+                console.log(pantry.ingredients)
                 pantry.save();
                 res.json({
                   message: `${req.body.ingredient} successfully added`,
@@ -64,8 +66,10 @@ const PantriesController = {
 
   GetAllIngredients: async (req, res) => {
     try {
-      const pantries = await Pantry.find({}).populate("ingredients");
-      res.json(pantries[0].ingredients);
+      const user = await User.findOne({'_id': req.params.id}).populate('pantry')
+      const pantries = await Pantry.findOne({'_id': user.pantry}).populate("ingredients");
+      console.log('The user is: ', user.pantry)
+      res.json(pantries.ingredients);
     } catch (err) {
       throw err;
     }

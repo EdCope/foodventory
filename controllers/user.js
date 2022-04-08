@@ -5,10 +5,11 @@ const UsersController = {
 
   Create: async (req, res) => {
     try{
-      req.body.pantry = new Pantry()
+      const pantry = new Pantry()
+      pantry.save()
       
       const user = new User(
-        req.body
+        {email: req.body.email, password: req.body.password, pantry: pantry }
       )
       await user.save()   
         res.json({'message': 'Account created'})
