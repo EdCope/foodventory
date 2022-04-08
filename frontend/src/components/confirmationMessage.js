@@ -1,15 +1,22 @@
+import { DynamicMessage } from "./dynamicMessage"
+
 export const ConfirmationMessage = (props) => {
+  let alertStatus
   if(props.message.includes("added")){
-    var alertStatus = 'success'
+    alertStatus = 'success'
+    console.log(props.message)
+    return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
+    
   } else if(props.message.includes("removed")){
-    var alertStatus = 'danger'
+    alertStatus = 'danger'
+    return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
   } else if(props.message.includes("already")){
-    var alertStatus = 'warning'
+    alertStatus = 'warning'
+    return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
   }
-    else{
-      var alertStatus = ''
-    }
-  return <div className={`alert alert-${alertStatus} alert-dismissible fade show`} role="alert" >{props.message} <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button></div>
+  else{
+      alertStatus = ''
+      return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={"hidden"} />
+    }  
+  
 }
