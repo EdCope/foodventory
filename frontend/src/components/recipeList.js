@@ -47,7 +47,7 @@ export const RecipeList = (props) => {
                               <th scope='col'>Calories</th>
                               <th scope='col'>Yield</th>
                               <th scope='col'>Link</th>
-                              <th scope='col'>Favourite</th>
+                              {/* <th scope='col'>Favourite</th> */}
                             </tr>
                           </thead>
                           <tbody>
@@ -65,7 +65,7 @@ export const RecipeList = (props) => {
                                 <a href={recipe.recipe.url}>Link</a>
                               </td>
                               <td>
-                                <AddToFavourites />
+                                <AddToFavourites recipeId={recipe.recipe.uri.split('#')[1]}/>
                               </td>
                             </tr>
                           </tbody>
