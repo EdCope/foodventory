@@ -8,7 +8,10 @@ const PantriesController = {
       .then((pantries) => {
         if (pantries.length === 0) {
           const pantry = new Pantry();
-          pantry.ingredients.push(req.body.ingredient);
+          const ingredient = new Ingredient({name:req.body.ingredient})
+          ingredient.save()
+          console.log('the req.body.ingredient is saved as: ', req.body.ingredient)
+          pantry.ingredients.push(ingredient);
           pantry.save((err) => {
             if (err) {
               throw err;
@@ -17,7 +20,15 @@ const PantriesController = {
           });
         } else if (!pantries[0].ingredients.includes(req.body.ingredient)) {
           const pantry = pantries[0];
-          pantry.ingredients.push(req.body.ingredient);
+          const ingredient = new Ingredient({name:req.body.ingredient})
+          console.log(ingredient.type)
+          ingredient.save((err) => {
+            if (err) {
+              throw err;
+            }
+          });
+          console.log('the req.body.ingredient is saved as: ', req.body)
+          pantry.ingredients.push(ingredient);
           pantry.save((err) => {
             if (err) {
               throw err;

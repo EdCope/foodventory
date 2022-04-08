@@ -29,9 +29,10 @@ export const ListIngredients = () => {
         <div id="ingredients-list">
           <h5>Whats in my Pantry?</h5>
           <ul className="list-group" id="ingredientsList">
+            {console.log('the ingredients array is: ',ingredients)}
             {ingredients.map((ingredient, i) => (
               <li className="list-group-item" key={i}>
-                {ingredient} < DeleteIngredientButton ingredient={ingredient} loadList={loadList} setMessage={setMessage}/>
+                {ingredient.name} < DeleteIngredientButton ingredient={ingredient} loadList={loadList} setMessage={setMessage}/>
               </li>
             ))}
           </ul>
