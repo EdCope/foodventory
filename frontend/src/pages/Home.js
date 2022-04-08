@@ -1,14 +1,19 @@
 import React, {useContext, useEffect} from 'react';
-import { ListIngredients } from "../components/listIngredients";
-import { SearchRecipe } from '../components/searchReceipe';
 import GlobalState from '../contexts/GlobalState';
+import { useNavigate } from "react-router";
 
 export const Home = () => {
   const [state, setState] = useContext(GlobalState);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('userdata'))
-    setState(state => ({...state, loggedIn: user.auth}));
+    if(user){
+      setState(state => ({...state, loggedIn: user.auth}));
+    }
+    if(state.loggedIn){
+      navigate('/Pantry');
+    }
   }, [state.loggedIn])
 
   

@@ -10,7 +10,7 @@ export const Login = () => {
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('userdata'))
-    if(user !== null){
+    if(user){
       setState(state => ({...state, loggedIn: user.auth}));
     }
     if(state.loggedIn){
