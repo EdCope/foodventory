@@ -35,14 +35,46 @@ export const LoginForm = () => {
   }
 
   return (
-    <div>
-      <h2>Login</h2>
-        <form id="login" onSubmit={submitHandler}> 
-          <input type="email" id="email-form" placeholder="E mail" value={email} onChange={handleChange}></input>
-          <input type="password" id="password-form" placeholder="Password" value={password} onChange={handleChange}></input>
-          <button type='submit' id="login-button">Login</button>
-        </form>
-        <ConfirmationMessage message={message} />
+<div className="container">
+      <div className="row">
+        <div className="col-3"></div>
+
+        <div className="col-6">
+
+        <h2>Log In</h2>
+      <form onSubmit={submitHandler}>
+        <div class="form-group">
+          <label for="email-form">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email-form"
+            aria-describedby="emailHelp"
+            value={email}
+            onChange={handleChange}
+          ></input>
+        </div>
+        <div class="form-group">
+          <label for="password-form">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password-form"
+            value={password}
+            onChange={handleChange}
+
+          ></input>
+        </div>
+        <button className="btn btn-primary" type="submit" id="sign-up-button">
+          Sign up
+        </button>
+      </form>
+        </div>
+
+        <div className="col-3"></div>
+      </div>
+
+      <ConfirmationMessage message={message} />
     </div>
   )
 }
