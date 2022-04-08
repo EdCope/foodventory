@@ -8,7 +8,7 @@ export const AddIngredient = (props) => {
   const submitHandler = (e) => {
     e.preventDefault()
     const postData = {ingredient}
-    console.log(postData)
+    console.log('this is the ingredient post Data', postData)
     axios.post(`http://localhost:8000/pantry/add`, postData ).then((res) => {
         console.log(res)
         setIngredient('')

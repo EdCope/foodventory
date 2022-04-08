@@ -1,3 +1,4 @@
+import { AddToFavourites } from "./addToFavourites";
 
 export const RecipeList = (props) => {
   // handleChange is showing and hiding recipe details
@@ -46,6 +47,7 @@ export const RecipeList = (props) => {
                               <th scope='col'>Calories</th>
                               <th scope='col'>Yield</th>
                               <th scope='col'>Link</th>
+                              {/* <th scope='col'>Favourite</th> */}
                             </tr>
                           </thead>
                           <tbody>
@@ -61,6 +63,9 @@ export const RecipeList = (props) => {
                               <td>{recipe.recipe.yield}</td>
                               <td>
                                 <a href={recipe.recipe.url}>Link</a>
+                              </td>
+                              <td>
+                                <AddToFavourites recipeId={recipe.recipe.uri.split('#')[1]}/>
                               </td>
                             </tr>
                           </tbody>

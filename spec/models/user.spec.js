@@ -33,4 +33,8 @@ describe("User model", () => {
     expect(user.pantry).toEqual(pantry)
   })
 
+  it("user has a favourites list", () => {
+    expect(user.favourites).toEqual([])
+  })
+
 });
