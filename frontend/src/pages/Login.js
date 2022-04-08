@@ -8,8 +8,13 @@ export const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log(state.loggedIn)
+    const user = JSON.parse(localStorage.getItem('userdata'))
+    if(user !== null){
+      setState(state => ({...state, loggedIn: user.auth}));
+    }
     if(state.loggedIn){
-      navigate('/');
+      navigate('/Pantry');
     }
   }, [state.loggedIn])
 

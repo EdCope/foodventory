@@ -25,6 +25,7 @@ export const LoginForm = () => {
         console.log(res);
         const {auth, token, uid} = res.data;
         if(auth){
+          localStorage.setItem("userdata",JSON.stringify(res.data))
           setState(state => ({...state, loggedIn: true, token: token, uid: uid}));
         }
         setEmail('');

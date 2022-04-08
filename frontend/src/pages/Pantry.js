@@ -3,7 +3,7 @@ import { ListIngredients } from "../components/listIngredients";
 import { SearchRecipe } from '../components/searchReceipe';
 import GlobalState from '../contexts/GlobalState';
 
-export const Home = () => {
+export const Pantry = () => {
   const [state, setState] = useContext(GlobalState);
 
   useEffect(() => {
@@ -14,8 +14,9 @@ export const Home = () => {
   
   return (
     <>
-     <h1>Landing Page</h1>
-     <h4>{state.loggedIn}</h4>
+     <h1>My Pantry</h1>
+     <ListIngredients />
+     <SearchRecipe />
     </>
   )
 };
