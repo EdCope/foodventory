@@ -2,25 +2,6 @@ const Pantry = require('../models/pantry');
 const Ingredient = require('../models/ingredient');
 
 const PantriesController = {
-  Index: (req, res) => {
-    Pantry.find({})
-      .exec()
-      .then((pantries) => {
-        if (pantries.length === 0) {
-          const pantry = new Pantry();
-
-          pantry.save((err) => {
-            if (err) {
-              throw err;
-            }
-            res.json({ message: 'Pantry created' });
-          });
-        } else {
-          res.json({ message: 'Pantry already created' });
-        }
-      });
-  },
-
   Add: (req, res) => {
     Pantry.find({})
       .exec()
@@ -37,7 +18,7 @@ const PantriesController = {
             }
             res.json({ message: `${req.body.ingredient} successfully added` });
           });
-        } else {
+        } else if (!pantries[0].ingredients.includes(req.body.ingredient)) {
           const pantry = pantries[0];
           const ingredient = new Ingredient({name:req.body.ingredient})
           console.log(ingredient.type)
@@ -54,17 +35,36 @@ const PantriesController = {
             }
             res.json({ message: `${req.body.ingredient} successfully added` });
           });
+        } else {
+          res.json({ message: `${req.body.ingredient} already in pantry.` })
         }
       });
   },
 
+  Remove: (req, res) => {
+    Pantry.find({})
+      .exec()
+      .then((pantry) => {
+        console.log(req.body)
+          pantry[0].ingredients.remove(req.body.ingredient);
+          
+          pantry[0].save((err) => {
+            if (err) {
+              throw err;
+            }
+            res.json({ message: `${req.body.ingredient} successfully removed` });
+          });
+      });
+  },
+
+
   GetAllIngredients: async (req, res) => {
     try {
+      console.log('here')
       const pantries = await Pantry.find({});
-      // console.log(pantries[0]);
-      console.log('pantry.ingredients is: ', pantries[0].ingredients)
       res.json(pantries[0].ingredients);
     } catch (err) {
+      console.log('error')
       throw err;
     }
   },

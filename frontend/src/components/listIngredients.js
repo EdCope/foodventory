@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { AddIngredient } from './addIngredient';
-
+import { DeleteIngredientButton } from "./deleteButton";
+import { ConfirmationMessage } from './confirmationMessage';
 
 export const ListIngredients = () => {
   const [ingredients, setIngredients] = useState([]);
-
+  const [message, setMessage] = useState('')
   const loadList = () => {
     axios.get(`http://localhost:8000/pantry/all`).then((res) => {
       const data = res.data;
@@ -19,7 +20,9 @@ export const ListIngredients = () => {
 
   return (
     <div>
-      <AddIngredient loadList={loadList} />
+      <AddIngredient loadList={loadList} setMessage={setMessage} />
+      <br></br>
+      <ConfirmationMessage message={message} />
       <div className="card mt-3">
       
       <div className="card-body">
@@ -29,7 +32,7 @@ export const ListIngredients = () => {
             {console.log('the ingredients array is: ',ingredients)}
             {ingredients.map((ingredient, i) => (
               <li className="list-group-item" key={i}>
-                {ingredient.name}
+                {ingredient.name} < DeleteIngredientButton ingredient={ingredient} loadList={loadList} setMessage={setMessage}/>
               </li>
             ))}
           </ul>
