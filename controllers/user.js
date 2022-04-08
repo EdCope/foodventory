@@ -6,7 +6,6 @@ const UsersController = {
   Create: async (req, res) => {
     try{
       req.body.pantry = new Pantry()
-      
       const user = new User(
         req.body
       )
@@ -21,10 +20,16 @@ const UsersController = {
     User.findOne({
       email: 'test@test'
     }).then((user) => {
-      console.log('this is the user', user),
       user.favourites.push(req.body)
-      console.log('this is the req.body', req)
       user.save()
+    })
+  },
+
+  GetFavourites: (req, res) => {
+    User.findOne({
+      email: 'test@test'
+    }).then((user) => {
+      res.json(user.favourites)
     })
   }
     

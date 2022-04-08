@@ -5,5 +5,6 @@ const UsersController = require('../controllers/user');
 
 router.post('/', UsersController.Create);
 router.post('/add', UsersController.AddFavourite);
+router.get('/favourites', UsersController.GetFavourites);
 
 module.exports = router;
