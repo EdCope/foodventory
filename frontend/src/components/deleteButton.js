@@ -10,5 +10,5 @@ export const DeleteIngredientButton = (props) => {
         props.setMessage(res.data.message)
     })
     }
-    return <button id="ingredient-delete" type="button" className="btn btn-danger" onClick={clickHandler}>X</button>
+    return <button id="ingredient-delete" type="button" className="btn btn-small btn-danger" onClick={clickHandler}><i className="fa-solid fa-x"></i></button>
 }

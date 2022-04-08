@@ -9,7 +9,9 @@ const UsersController = {
       pantry.save()
       
       const user = new User(
+        
         {email: req.body.email, password: req.body.password, pantry: pantry }
+
       )
       await user.save()   
         res.json({'message': 'Account created'})
@@ -19,12 +21,11 @@ const UsersController = {
   },
 
   AddFavourite: (req, res) => {
+    //console.log(req.body)
     User.findOne({
       email: 'test@test'
     }).then((user) => {
-      console.log('this is the user', user),
       user.favourites.push(req.body)
-      console.log('this is the req.body', req)
       user.save()
     })
   }

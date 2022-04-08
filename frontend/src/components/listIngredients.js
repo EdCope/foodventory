@@ -31,10 +31,34 @@ export const ListIngredients = () => {
         <div id="ingredients-list">
           <h5>Whats in my Pantry?</h5>
           <ul className="list-group" id="ingredientsList">
-            {console.log('the ingredients array is: ',ingredients)}
+            <li className="list-group-item">
+              <div className="row">
+                  <div className="col-2">
+                  <strong>Select</strong>
+                  </div>
+                  <div className="col-8">
+                  <strong>Ingredient</strong>
+                  </div>
+                  <div className="col-2">
+                  <strong>Remove</strong>
+                  </div>
+                </div>
+
+            </li>
             {ingredients.map((ingredient) => (
               <li className="list-group-item" key={ingredient._id}>
-                {ingredient.name} < DeleteIngredientButton ingredient={ingredient} loadList={loadList} setMessage={setMessage}/>
+                <div className="row">
+                  <div className="col-2">
+                  <input type="checkbox" name="checkbox" id="pickIngredient" value={ingredient.name}></input>
+                  </div>
+                  <div className="col-8">
+                  {ingredient.name}
+                  </div>
+                  <div className="col-2">
+                  < DeleteIngredientButton ingredient={ingredient} loadList={loadList} setMessage={setMessage}/>
+                  </div>
+                </div>
+                
               </li>
             ))}
           </ul>
