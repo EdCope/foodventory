@@ -24,6 +24,30 @@ So I can see the contents of my fridge,
 It should be able to list all ingredients.
 ```
 
+```
+As a user,
+So that I know what I have used,
+I would like to be able to delete an ingredient.
+```
+
+```
+As a user,
+So that I can have an accurate description of what's in my pantry,
+I would to avoid duplications.
+```
+
+```
+As a user,
+So that I can access my account,
+I would like to be able to sign in.
+```
+
+```
+As a user,
+So that my account stays secure,
+I'd like to be able to log out when I'm done.
+```
+
 ## Tech Stack
 
 For this project we are using:
