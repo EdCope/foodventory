@@ -15,17 +15,23 @@ export const RecipeList = (props) => {
   };
   //   if/else statement to check if recipe-list is populated properly and returns empty <ul> if not
   if (props.recipes === '') {
-    return <ul id='recipe-list'></ul>;
-  } else {
+    return <>
+    <h5>{props.submitMessage}</h5>
+    <ul id='recipe-list'></ul>
+    </>
+  }else {
     const list = props.recipes.hits;
     return (
-      <div className='card'>
+      <>
+<h5>{props.submitMessage}</h5>
+<div className='card'>
         <div className='card-body'>
           <h5>What recipes can I make?</h5>
           <ul className='list-group' id='recipe-list'>
             {list.map((recipe, i) => {
               return (
                 <li
+                  key={i}
                   id={`${recipe.recipe.label}-${i}`}
                   className='list-group-item'
                   onClick={handleChange}
@@ -93,6 +99,8 @@ export const RecipeList = (props) => {
           </ul>
         </div>
       </div>
-    );
+      </>
+      
+    )
   }
 };
