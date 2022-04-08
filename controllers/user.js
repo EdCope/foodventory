@@ -9,7 +9,9 @@ const UsersController = {
       pantry.save()
       
       const user = new User(
-        {email: req.body.email, password: req.body.password, pantry: pantry}
+        
+        {email: req.body.email, password: req.body.password, pantry: pantry }
+
       )
       await user.save()   
         res.json({'message': 'Account created'})

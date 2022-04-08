@@ -8,7 +8,8 @@ export const ListIngredients = () => {
   const [ingredients, setIngredients] = useState([]);
   const [message, setMessage] = useState('')
   const loadList = () => {
-    axios.get(`http://localhost:8000/pantry/all`).then((res) => {
+    const user = JSON.parse(localStorage.getItem('userdata'))
+    axios.get(`http://localhost:8000/pantry/all/${user.uid}`).then((res) => {
       const data = res.data;
       setIngredients( data );
     });
