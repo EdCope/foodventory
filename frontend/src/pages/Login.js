@@ -1,16 +1,16 @@
 import React, {useContext, useEffect} from 'react';
-import {SignUpForm} from '../components/signUpForm';
 import GlobalState from '../contexts/GlobalState';
 import { useNavigate } from "react-router";
+import { LoginForm } from '../components/loginForm';
 
 
-export const Signup = () => {
+export const Login = () => {
   const [state, setState] = useContext(GlobalState);
   const navigate = useNavigate();
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('userdata'))
-    if(user !== null){
+    if(user){
       setState(state => ({...state, loggedIn: user.auth}));
     }
     if(state.loggedIn){
@@ -18,5 +18,5 @@ export const Signup = () => {
     }
   }, [state.loggedIn])
 
-  return <SignUpForm />
+  return <LoginForm />
 }
