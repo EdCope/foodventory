@@ -27,7 +27,7 @@ const PantriesController = {
                   name: req.body.ingredient,
                   pantry: pantry,
                 });
-                console.log(ingredient.type);
+                //console.log('I am here', ingredient.type.then((type) => {type}));
                 ingredient.save((err) => {
                   if (err) {
                     throw err;

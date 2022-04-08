@@ -14,6 +14,7 @@ export const ListIngredients = () => {
     });
   };
   
+  
   useEffect(() => {
     loadList();
   }, []);
