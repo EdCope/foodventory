@@ -66,7 +66,7 @@ export const LoginForm = () => {
           ></input>
         </div>
         <button className="btn btn-primary" type="submit" id="sign-up-button">
-          Sign up
+          Log In
         </button>
       </form>
         </div>
