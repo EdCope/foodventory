@@ -1,10 +1,9 @@
 import axios from "axios"
-import { useState } from "react"
 
 export const DeleteIngredientButton = (props) => {
     const clickHandler= (e) => { 
         e.preventDefault()
-        const postData = {'ingredient': props.ingredient}
+        const postData = {'ingredient': props.ingredient }
         axios.post('http://localhost:8000/pantry/remove', postData).then((res) => { console.log(res)
         props.loadList()
         props.setMessage(res.data.message)

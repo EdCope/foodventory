@@ -46,25 +46,20 @@ const PantriesController = {
       .exec()
       .then((pantry) => {
         console.log(req.body)
-          pantry[0].ingredients.remove(req.body.ingredient);
-          
-          pantry[0].save((err) => {
-            if (err) {
-              throw err;
-            }
-            res.json({ message: `${req.body.ingredient} successfully removed` });
+          Ingredient.deleteOne({_id: req.body.ingredient._id}, function(err) {
+            res.json({ message: `${req.body.ingredient.name} successfully removed` });
           });
-      });
-  },
+          
+            
+          });
+      },
 
 
   GetAllIngredients: async (req, res) => {
     try {
-      console.log('here')
-      const pantries = await Pantry.find({});
+      const pantries = await Pantry.find({}).populate('ingredients');
       res.json(pantries[0].ingredients);
     } catch (err) {
-      console.log('error')
       throw err;
     }
   },

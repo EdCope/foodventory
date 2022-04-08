@@ -30,8 +30,8 @@ export const ListIngredients = () => {
           <h5>Whats in my Pantry?</h5>
           <ul className="list-group" id="ingredientsList">
             {console.log('the ingredients array is: ',ingredients)}
-            {ingredients.map((ingredient, i) => (
-              <li className="list-group-item" key={i}>
+            {ingredients.map((ingredient) => (
+              <li className="list-group-item" key={ingredient._id}>
                 {ingredient.name} < DeleteIngredientButton ingredient={ingredient} loadList={loadList} setMessage={setMessage}/>
               </li>
             ))}
