@@ -20,6 +20,8 @@ export const Layout = () => {
       <Nav className="me-auto">
         {!state.loggedIn && <Nav.Link href="/signup">Sign Up</Nav.Link>}
         {!state.loggedIn && <Nav.Link href="/login">Log in</Nav.Link>}
+        {state.loggedIn && <Nav.Link href="/favourites">Favourites</Nav.Link>}
+        {state.loggedIn && <SignOutButton />}
         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -41,16 +43,6 @@ export const Layout = () => {
           <h5>
             Powered by us, made by you!
           </h5>
-          <Link to="/">Home</Link>
-          <br/>
-          {!state.loggedIn && <Link to="/signup">Sign Up</Link>}
-          <br/>
-          {!state.loggedIn && <Link to="/login">Login</Link>}
-          <br/>
-          {state.loggedIn && <Link to="/favourites">Favourites</Link>}
-          <br/>
-          {state.loggedIn && <SignOutButton />}
-          <br/>
         </div>
       </header>
       <Outlet />

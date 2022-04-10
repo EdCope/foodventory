@@ -1,4 +1,5 @@
 import React from 'react';
+import './signOutButton.css'
 import { useNavigate } from "react-router";
 import { Outlet, Link } from "react-router-dom";
 
