@@ -1,3 +1,4 @@
+import './recipeList.css';
 import { AddToFavourites } from "./addToFavourites";
 
 export const RecipeList = (props) => {
