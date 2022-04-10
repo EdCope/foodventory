@@ -14,7 +14,7 @@ export const Home = () => {
     if(state.loggedIn){
       navigate('/Pantry');
     }
-  }, [state.loggedIn])
+  }, [])
 
   
   return (
