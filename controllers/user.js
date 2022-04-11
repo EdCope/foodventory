@@ -22,10 +22,9 @@ const UsersController = {
   },
 
   AddFavourite: (req, res) => {
-    //console.log(req.body)
     User.findOne({
-      email: 'test@test'
-    }).then((user) => {
+        '_id': req.body.user.uid
+      }).then((user) => {
       user.favourites.push(req.body)
       user.save()
     })
@@ -33,7 +32,7 @@ const UsersController = {
 
   GetFavourites: (req, res) => {
     User.findOne({
-      email: 'test@test'
+      '_id': req.body.user.uid
     }).then((user) => {
       res.json(user.favourites)
     })
