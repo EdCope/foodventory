@@ -1,4 +1,9 @@
 #sign-out-button {
   color: grey;
   text-decoration: none;
+  text-align: left;
+  padding-left: 0%;
+}
+#sign-out-button:hover {
+  color: black;
 }
