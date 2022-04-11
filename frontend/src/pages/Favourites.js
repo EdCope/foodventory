@@ -11,8 +11,9 @@ export const Favourites = () => {
   useProtected();
   const getListValue = (e) => {
     e.preventDefault()
+    const user = JSON.parse(localStorage.getItem('userdata'))
 
-    axios.get(`http://localhost:8000/user/favourites`).then((res) => {
+    axios.get(`http://localhost:8000/user/favourites/${user.uid}`).then((res) => {
       console.log('the favourites returned are:', res.data)
         const data = res.data;
         setRecipes( data )
@@ -20,7 +21,7 @@ export const Favourites = () => {
       }).then(data => {
         data.map(recipe => {
           console.log('each recipe is', recipe)
-          axios.get(`https://api.edamam.com/api/recipes/v2/${recipe}?type=public&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc`)
+          axios.get(`https://api.edamam.com/api/recipes/v2/${recipe.favourite}?type=public&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc`)
           .then(res => {
             setFavouriteRecipes(res.data)
             console.log(favouriteRecipes)

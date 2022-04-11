@@ -31,8 +31,9 @@ const UsersController = {
   },
 
   GetFavourites: (req, res) => {
+    console.log('req.params is:', req.params)
     User.findOne({
-      '_id': req.body.user.uid
+      '_id': req.params.id
     }).then((user) => {
       res.json(user.favourites)
     })
