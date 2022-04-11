@@ -5,7 +5,8 @@ export const AddToFavourites = (props) => {
 
   const clickHandler = (e) => {
     e.preventDefault()
-    const postData = {favourite: props.recipeId}
+    const user = JSON.parse(localStorage.getItem('userdata'))
+    const postData = {favourite: props.recipeId, user: user}
     console.log('this is the post Data', postData)
     axios.post(`http://localhost:8000/user/add`, postData ).then((res) => {
         console.log('this is the post result', res)
