@@ -1,6 +1,12 @@
 .App {
-  background-color: #b7adcfff;
   text-align: center;
+  /* background-color: rgba(252, 130, 74, 0.103); */
+  /* background-color: rgba(143, 213, 166, 0.183); */
+  /* background-color: rgba(183, 173, 207, 0.151); */
+}
+
+.background {
+  background-color: rgba(143, 213, 166, 0.183);
 }
 
 @media (prefers-reduced-motion: no-preference) {

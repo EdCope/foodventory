@@ -5,3 +5,31 @@
   padding: 15px;
   max-width: none;
 }
+
+#Sign-up {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+#Log-in {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+#My-pantry {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+#Favourites {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+ 
+}

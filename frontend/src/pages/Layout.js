@@ -14,16 +14,16 @@ export const Layout = () => {
 
   return (
     <>
-    <Navbar id="navbar-background" expand="lg">
+    <Navbar expand="lg">
       <Container id="basic-navbar-nav">
         <Navbar.Brand href="/home">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="me-auto">
-            {!state.loggedIn && <Nav.Link href="/signup">Sign Up</Nav.Link>}
-            {!state.loggedIn && <Nav.Link href="/login">Log in</Nav.Link>}
-            {state.loggedIn && <Nav.Link href="/pantry">My Pantry</Nav.Link>}
-            {state.loggedIn && <Nav.Link href="/favourites">Favourites</Nav.Link>}
+            {!state.loggedIn && <Nav.Link id="Sign-up" href="/signup">Sign Up</Nav.Link>}
+            {!state.loggedIn && <Nav.Link id="Log-in" href="/login">Log in</Nav.Link>}
+            {state.loggedIn && <Nav.Link id="My-pantry" href="/pantry">My Pantry</Nav.Link>}
+            {state.loggedIn && <Nav.Link id="Favourites" href="/favourites">Favourites</Nav.Link>}
             {state.loggedIn && <SignOutButton />}
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

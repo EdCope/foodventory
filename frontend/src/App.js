@@ -9,6 +9,7 @@ import { Pantry } from './pages/Pantry';
 import { Favourites } from './pages/Favourites';
 import React, { useState } from 'react';
 import GlobalState from './contexts/GlobalState';
+import './App.css'
 
 function App() {
   const user = JSON.parse(localStorage.getItem('userdata'))
@@ -20,6 +21,7 @@ function App() {
   }
   const [state, setState] = useState(init)
   return (
+    <div className="background">
     <GlobalState.Provider value={[state, setState]}>
     <BrowserRouter>
       <Routes>
@@ -34,6 +36,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </GlobalState.Provider>
+    </div>
   );
 }
 
