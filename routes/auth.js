@@ -11,7 +11,7 @@ const verifyLoggedIn = (req, res, next) => {
   } else {
     jwt.verify(token, 'secretForTesting', (err, decoded) => {
       if (err){
-        res.json({auth: false, })
+        res.json({auth: false, message: 'Token Invalid' })
       }else {
         req.uid = decoded.id;
         next()
@@ -21,5 +21,6 @@ const verifyLoggedIn = (req, res, next) => {
 }
 
 router.post('/', AuthController.Login);
+router.get('/verify', verifyLoggedIn, AuthController.Verify);
 
 module.exports = router;

@@ -40,8 +40,8 @@ export const SignUpForm = () => {
 
         <h2>Sign Up</h2>
       <form onSubmit={submitHandler}>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
             class="form-control"
@@ -50,12 +50,12 @@ export const SignUpForm = () => {
             value={email}
             onChange={handleChange}
           ></input>
-          <small id="emailHelp" class="form-text text-muted">
+          <small id="emailHelp" className="form-text text-muted">
             We'll never share your email with anyone else.
           </small>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
             class="form-control"
