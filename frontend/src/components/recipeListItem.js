@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { RecipeListItemTable } from "./recipeListItemTable";
+import { AddToFavourites } from "./addToFavourites";
 
 export const RecipeListItem = (props) => {
   
   const {i, recipe, ingredientsListArray} = props
-
-  //const[matches, setMatches] = useState([])
-
-
 
   const getMatches = () => {
     let recipeArray = []
@@ -51,7 +47,7 @@ export const RecipeListItem = (props) => {
         <div className="row" >
           <div className='col-3' id={`${recipe.recipe.label}-${i}`}>{test.length} / {recipe.recipe.ingredients.length} </div>
           <div className='col-7' id={`${recipe.recipe.label}-${i}`}>{recipe.recipe.label}</div>
-          <div className='col-2' id={`${recipe.recipe.label}-${i}`}><i className="fa-solid fa-heart"></i></div>
+          <div className='col-2' id={`${recipe.recipe.label}-${i}`}><AddToFavourites recipeId={recipe.recipe.uri.split("#")[1]} /></div>
         </div>
         
   

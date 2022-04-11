@@ -18,7 +18,7 @@ export const Favourites = () => {
           const data = res.data;
           data.map(recipe => {
             console.log('each recipe is', recipe)
-            axios.get(`https://api.edamam.com/api/recipes/v2/${recipe.favourite}?type=public&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc`)
+            axios.get(`https://api.edamam.com/api/recipes/v2/${recipe}?type=public&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc`)
             .then(res => {
               setFavouriteRecipes(state => ([...state, res.data]));
               console.log('favouriteArray is: ',favouriteRecipes)

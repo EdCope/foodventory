@@ -22,23 +22,36 @@ const UsersController = {
   },
 
   AddFavourite: (req, res) => {
+    console.log(req.body.favourite)
     User.findOne({
         '_id': req.body.user.uid
       }).then((user) => {
-      user.favourites.push(req.body)
-      user.save()
+        if (!user.favourites.includes(req.body.favourite)) { 
+          user.favourites.push(req.body.favourite)
+          user.save()
+        }
     })
   },
 
   GetFavourites: (req, res) => {
-    console.log('req.params is:', req.params)
     User.findOne({
       '_id': req.params.id
     }).then((user) => {
       res.json(user.favourites)
     })
+  },
+
+  FindFavourite: (req, res) => {
+    User.findOne({
+      '_id': req.params.id
+    }).then((user) => {
+      if (user.favourites.includes(req.params.recipeID)) {
+        res.json("true")
+      } else {
+        res.json("false")
+      }
+    })
   }
-    
 }
 
 module.exports = UsersController;

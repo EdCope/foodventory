@@ -11,7 +11,7 @@ export const RecipeList = (props) => {
       <>
         <div className='card-body'>
           <h5>What recipes can I make?</h5>
-<p>Search to find recipes.</p>
+          <p>Search to find recipes.</p>
         </div>
       </>
     );
@@ -23,7 +23,7 @@ export const RecipeList = (props) => {
           <h5>What recipes can I make?</h5>
           <p>{props.submitMessage}</p>
           <ul className='list-group' id='recipe-list'>
-            <li className='list-group-item'>
+            <li key="listtop" className='list-group-item'>
               <div className="row">
                   <div className='col-3'><strong>What do I have ?</strong></div>
                   <div className='col-7'><strong>Recipe Name</strong></div>
