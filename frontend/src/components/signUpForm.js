@@ -76,5 +76,6 @@ export const SignUpForm = () => {
 
       <ConfirmationMessage message={message} />
     </div>
+
   );
 };

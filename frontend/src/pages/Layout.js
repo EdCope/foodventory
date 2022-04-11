@@ -6,22 +6,24 @@ import { Navbar } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
+import './Layout.css';
+
 
 export const Layout = () => {
   const [state, setState] = useContext(GlobalState);
 
   return (
     <>
-    <Navbar bg="light" expand="lg">
-      <Container>
+    <Navbar expand="lg">
+      <Container id="basic-navbar-nav">
         <Navbar.Brand href="/home">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
           <Nav className="me-auto">
-            {!state.loggedIn && <Nav.Link href="/signup">Sign Up</Nav.Link>}
-            {!state.loggedIn && <Nav.Link href="/login">Log in</Nav.Link>}
-            {state.loggedIn && <Nav.Link href="/pantry">My Pantry</Nav.Link>}
-            {state.loggedIn && <Nav.Link href="/favourites">Favourites</Nav.Link>}
+            {!state.loggedIn && <Nav.Link id="Sign-up" href="/signup">Sign Up</Nav.Link>}
+            {!state.loggedIn && <Nav.Link id="Log-in" href="/login">Log in</Nav.Link>}
+            {state.loggedIn && <Nav.Link id="My-pantry" href="/pantry">My Pantry</Nav.Link>}
+            {state.loggedIn && <Nav.Link id="Favourites" href="/favourites">Favourites</Nav.Link>}
             {state.loggedIn && <SignOutButton />}
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -35,7 +37,7 @@ export const Layout = () => {
       </Container>
     </Navbar>
     <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
-    <div className="App">
+    <div  className="App">
       <header className="App-header">
         <div>
           <h4>
