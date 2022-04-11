@@ -6,7 +6,7 @@ import { Navbar } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
-import './navBar.css'
+import './Layout.css';
 
 
 export const Layout = () => {
@@ -14,11 +14,11 @@ export const Layout = () => {
 
   return (
     <>
-    <Navbar className="navbar-background" expand="lg">
-      <Container>
+    <Navbar id="navbar-background" expand="lg">
+      <Container id="basic-navbar-nav">
         <Navbar.Brand href="/home">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
           <Nav className="me-auto">
             {!state.loggedIn && <Nav.Link href="/signup">Sign Up</Nav.Link>}
             {!state.loggedIn && <Nav.Link href="/login">Log in</Nav.Link>}
@@ -37,7 +37,7 @@ export const Layout = () => {
       </Container>
     </Navbar>
     <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
-    <div className="App">
+    <div  className="App">
       <header className="App-header">
         <div>
           <h4>
