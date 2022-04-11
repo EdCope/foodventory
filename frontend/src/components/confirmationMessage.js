@@ -13,6 +13,9 @@ export const ConfirmationMessage = (props) => {
   } else if(props.message.includes("already")){
     alertStatus = 'warning'
     return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
+  } else if(props.message.includes("There are no ingredients")){
+    alertStatus = 'warning'
+    return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
   }
   else{
       alertStatus = ''
