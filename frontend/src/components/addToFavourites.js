@@ -19,7 +19,6 @@ checkExistingFavourites()
     e.preventDefault()
     const user = JSON.parse(localStorage.getItem('userdata'))
     const postData = {favourite: props.recipeId, user: user}
-    console.log('this is the post Data', postData)
     axios.post(`http://localhost:8000/user/add`, postData ).then((res) => {
         props.setMessage(res.data.message)
       })

@@ -23,7 +23,6 @@ export const RecipeListItem = (props) => {
   // handleChange is showing and hiding recipe details
   const handleChange = (e) => {
     
-    console.log(e.target.id)
     let div = document
       .getElementById(e.target.id)
       .getElementsByTagName('div')[4]

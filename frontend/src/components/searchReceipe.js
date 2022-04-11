@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RecipeList } from "./recipeList";
 
@@ -6,6 +6,8 @@ export const SearchRecipe = (props) => {
   const [recipes, setRecipes] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
   const [ingredientsListArray, setIngredientsListArray] = useState([]);
+
+  
   const getListValue = (e) => {
     //   getListValue function gets all of the ingredients in the ingredients list by finding the checked boxes.
     e.preventDefault();
@@ -37,7 +39,7 @@ export const SearchRecipe = (props) => {
       // axios call to get the url and setting the recipe state with the returned data
       axios.get(searchUrl).then((res) => {
         const recipes = res.data;
-        setRecipes(recipes);
+        setRecipes(recipes)
         if (recipes.hits.length === 0) {
           props.setMessage(`No recipes found.`);
         } else {
