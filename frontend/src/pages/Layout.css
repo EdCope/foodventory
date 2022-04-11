@@ -1,4 +1,6 @@
-
+.navbar {
+  padding: 0;
+}
 
 #basic-navbar-nav {
   background-color: #b7adcfff;
