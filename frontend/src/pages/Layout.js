@@ -6,13 +6,15 @@ import { Navbar } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { NavDropdown } from 'react-bootstrap';
+import './navBar.css'
+
 
 export const Layout = () => {
   const [state, setState] = useContext(GlobalState);
 
   return (
     <>
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navbar-background" expand="lg">
       <Container>
         <Navbar.Brand href="/home">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
