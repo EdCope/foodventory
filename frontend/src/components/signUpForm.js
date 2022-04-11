@@ -3,6 +3,7 @@ import axios from "axios";
 import { ConfirmationMessage } from "./confirmationMessage";
 
 import bcrypt from "bcryptjs";
+import { useNavigate } from "react-router";
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -10,6 +11,8 @@ export const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     if (e.target === document.getElementById("password-form")) {
@@ -28,6 +31,7 @@ export const SignUpForm = () => {
       setEmail("");
       setPassword("");
       setMessage(res.data.message);
+      navigate('/login');
     });
   };
 

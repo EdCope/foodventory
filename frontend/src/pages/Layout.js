@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { SignOutButton } from "../components/signOutButton";
 import GlobalState from '../contexts/GlobalState';
 import React, { useContext } from 'react';
@@ -16,7 +16,7 @@ export const Layout = () => {
     <>
     <Navbar expand="lg">
       <Container id="basic-navbar-nav">
-        <Navbar.Brand href="/home">PantryPal</Navbar.Brand>
+        <Navbar.Brand href="/">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="me-auto">
@@ -36,7 +36,7 @@ export const Layout = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin='anonymous'></script>
     <div  className="App">
       <header className="App-header">
         <div>
