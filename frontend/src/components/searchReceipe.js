@@ -8,8 +8,7 @@ export const SearchRecipe = () => {
   const [ingredientsListArray, setIngredientsListArray] = useState([])
   const getListValue = (e) => {
     //   getListValue function gets all of the ingredients in the ingredients list by finding the checked boxes.
-    e.preventDefault();    
-    setRecipes('');
+    e.preventDefault();
 
     const ingredientsList = document.querySelectorAll(
       "input[name=checkbox]:checked"
