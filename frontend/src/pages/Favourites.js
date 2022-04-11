@@ -1,12 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
 import { ListFavourites } from '../components/listFavourites';
-import { RecipeList } from '../components/recipeList';
+import { useProtected } from '../hooks/verifyLogin';
 
 export const Favourites = () => {
 
   const [favouriteRecipes, setFavouriteRecipes] = useState([])
   const [recipes, setRecipes] = useState([]);
+
+  useProtected();
   const getListValue = (e) => {
     e.preventDefault()
 

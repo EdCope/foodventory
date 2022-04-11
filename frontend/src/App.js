@@ -11,7 +11,14 @@ import React, { useState } from 'react';
 import GlobalState from './contexts/GlobalState';
 
 function App() {
-  const [state, setState] = useState({loggedIn: false, token: '', uid: ''})
+  const user = JSON.parse(localStorage.getItem('userdata'))
+  let init;
+  if(!user){
+    init = {loggedIn: false, token:'', uid:''}
+  } else {
+    init = {loggedIn: user.auth, token: user.token, uid: user.uid}
+  }
+  const [state, setState] = useState(init)
   return (
     <GlobalState.Provider value={[state, setState]}>
     <BrowserRouter>

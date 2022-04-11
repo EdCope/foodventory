@@ -22,6 +22,10 @@ const AuthController = {
     } catch (err) {
       res.json({'message': err})
     }
+  },
+
+  Verify: async (req, res) => {
+    res.json({'auth': true, message: 'Token Valid'})
   }
     
 }

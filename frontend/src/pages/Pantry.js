@@ -1,21 +1,13 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { ListIngredients } from "../components/listIngredients";
 import { SearchRecipe } from '../components/searchReceipe';
 import GlobalState from '../contexts/GlobalState';
-import { useNavigate } from "react-router";
+import { useProtected } from '../hooks/verifyLogin';
 
 export const Pantry = () => {
   const [state, setState] = useContext(GlobalState);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('userdata'))
-    if(!user){
-      setState(state => ({...state, loggedIn: false}));
-      navigate('/');
-    }
-  }, [])
-
+  
+  useProtected();
   
   return (
     <>
