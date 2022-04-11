@@ -5,6 +5,7 @@ import { RecipeList } from "./recipeList";
 export const SearchRecipe = () => {
   const [recipes, setRecipes] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
+  const [ingredientsListArray, setIngredientsListArray] = useState([])
   const getListValue = (e) => {
     //   getListValue function gets all of the ingredients in the ingredients list by finding the checked boxes.
     e.preventDefault();    
@@ -16,13 +17,15 @@ export const SearchRecipe = () => {
 
     const array = [];
 
-    ingredientsList.forEach((ingredient) => array.push(ingredient.value));
+    ingredientsList.forEach((ingredient) => array.push(ingredient.value.toLowerCase()));
+
+    setIngredientsListArray(array)
 
     if (ingredientsList.length === 0) {
       setSubmitMessage(`Please choose and ingredient to find a recipe.`);
     } else {
       // Url for searching the API - https://developer.edamam.com/edamam-docs-recipe-api
-      const searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${array.join(
+      const searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredientsListArray.join(
         "%20"
       )}&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc`;
 
@@ -51,7 +54,7 @@ export const SearchRecipe = () => {
         Search For Recipe
       </button>
 
-      <RecipeList recipes={recipes} submitMessage={submitMessage} />
+      <RecipeList recipes={recipes} submitMessage={submitMessage} ingredientsListArray={ingredientsListArray} />
     </div>
   )
 };

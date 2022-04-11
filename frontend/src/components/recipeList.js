@@ -27,7 +27,7 @@ export const RecipeList = (props) => {
               </div>
             </li>
             {list.map((recipe, i) => {
-              return <RecipeListItem recipe={recipe} i={i}/>
+              return <RecipeListItem recipe={recipe} i={i} ingredientsListArray={props.ingredientsListArray} />
             })}
           </ul>
         </div>

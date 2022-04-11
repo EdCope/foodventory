@@ -1,9 +1,29 @@
+import { useState } from "react";
 import { RecipeListItemTable } from "./recipeListItemTable";
 
 export const RecipeListItem = (props) => {
   
-  const {i, recipe} = props
-  
+  const {i, recipe, ingredientsListArray} = props
+
+  //const[matches, setMatches] = useState([])
+
+
+
+  const getMatches = () => {
+    let recipeArray = []
+ 
+    recipe.recipe.ingredients
+              .map(
+                (ingredient, i) =>
+                recipeArray.push(ingredient.food.toLowerCase()))
+    let removeDuplicate = [...new Set(recipeArray)]
+    const matches = removeDuplicate.filter(element => ingredientsListArray.includes(element))
+    
+    return matches
+  }
+  const test = getMatches()
+
+
   // handleChange is showing and hiding recipe details
   const handleChange = (e) => {
     
@@ -29,7 +49,7 @@ export const RecipeListItem = (props) => {
         onClick={handleChange}
       >
         <div className="row" >
-          <div className='col-2' id={`${recipe.recipe.label}-${i}`}></div>
+          <div className='col-2' id={`${recipe.recipe.label}-${i}`}>{test.length} / {recipe.recipe.ingredients.length} </div>
           <div className='col-8' id={`${recipe.recipe.label}-${i}`}>{recipe.recipe.label}</div>
           <div className='col-2' id={`${recipe.recipe.label}-${i}`}><i className="fa-solid fa-heart"></i></div>
         </div>
@@ -52,6 +72,7 @@ export const RecipeListItem = (props) => {
             {recipe.recipe.ingredients
               .map(
                 (ingredient, i) =>
+                  //recipeArray.push(ingredient.food[0].toLowerCase())
                   `${
                     ingredient.food[0].toUpperCase() +
                     ingredient.food.slice(1).toLowerCase()
