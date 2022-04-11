@@ -27,7 +27,7 @@ export const SearchRecipe = () => {
       // Url for searching the API - https://developer.edamam.com/edamam-docs-recipe-api
       const searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${ingredientsListArray.join(
         "%20"
-      )}&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc`;
+      )}&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc&random=true`;
 
       // axios call to get the url and setting the recipe state with the returned data
       axios.get(searchUrl).then((res) => {
