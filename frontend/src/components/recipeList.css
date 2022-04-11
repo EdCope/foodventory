@@ -1,0 +1,7 @@
+.list-group-item {
+  cursor: pointer;
+}
+
+.mt-3 {
+  cursor: default;
+}
