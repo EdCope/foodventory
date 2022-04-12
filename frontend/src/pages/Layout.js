@@ -37,7 +37,9 @@ export const Layout = () => {
       </Container>
     </Navbar>
     <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
-    <div  id="App">
+
+    <div className="App m-3 p-3" id="App">
+
       <header className="App-header">
         {/* <div>
           <h4>
@@ -48,8 +50,8 @@ export const Layout = () => {
           </h5>
         </div> */}
       </header>
-      <Outlet />
     </div>
+    <Outlet />
     </>
   )
 }

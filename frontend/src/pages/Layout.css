@@ -1,8 +1,13 @@
+
 #App {
   color: white;
   font-size: larger;
   font-weight: bold;
   text-align: center; 
+}
+
+.navbar {
+  padding: 0;
 }
 
 #basic-navbar-nav {
