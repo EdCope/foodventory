@@ -9,20 +9,20 @@ export const AddToFavourites = (props) => {
     axios.get(`http://localhost:8000/user/findfavourite/${user.uid}/${props.recipeId}`).then((res) => {
       if (res.data === 'true') {
         setStyle("red")
+      } else {
+        setStyle("black")
       }
   })
 }
 checkExistingFavourites()
 
 const customClick = (e) => {
-  console.log(e)
   clickHandler()
   props.getListValue()
 }
 
 
   const clickHandler = (e) => {
-    //e.preventDefault()
     const user = JSON.parse(localStorage.getItem('userdata'))
     const postData = {favourite: props.recipeId, user: user}
     axios.post(`http://localhost:8000/user/add`, postData ).then((res) => {

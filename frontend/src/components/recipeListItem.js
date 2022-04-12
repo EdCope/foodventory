@@ -22,18 +22,23 @@ export const RecipeListItem = (props) => {
 
   // handleChange is showing and hiding recipe details
   const handleChange = (e) => {
-    
-    let div = document
+    console.log(e.target)
+
+    if (e.target.id === "add-to-favourites") {
+  
+    } else {
+
+      let div = document
       .getElementById(e.target.id)
       .getElementsByTagName('div')[4]
-
-    console.log(div);
 
     if (div.classList.contains('hidden')) {
       div.classList.remove('hidden');
     } else {
       div.classList.add('hidden');
     }
+    }
+
   };
 
     return (
@@ -46,7 +51,7 @@ export const RecipeListItem = (props) => {
         <div className="row" >
           <div className='col-3 col-sm-3' id={`${recipe.recipe.label}-${i}`}>{test.length} / {recipe.recipe.ingredients.length} </div>
           <div className='col-7 col-sm-6' id={`${recipe.recipe.label}-${i}`}>{recipe.recipe.label}</div>
-          <div className='col-2 col-sm-3' id={`${recipe.recipe.label}-${i}`}><AddToFavourites recipeId={recipe.recipe.uri.split("#")[1]} getListvalue={props.getListvalue} /></div>
+          <div className='col-2 col-sm-3' id={`${recipe.recipe.label}-${i}`}><AddToFavourites recipeId={recipe.recipe.uri.split("#")[1]} getListValue={props.getListValue} /></div>
         </div>
         
   

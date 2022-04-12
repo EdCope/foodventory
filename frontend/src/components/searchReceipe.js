@@ -49,9 +49,9 @@ export const SearchRecipe = (props) => {
     }
   };
 
-  // useEffect(() => { 
-  //   getListValue()
-  // })
+  useEffect(() => { 
+    getListValue()
+  }, [])
 
   return (
     <div className="card mt-3">

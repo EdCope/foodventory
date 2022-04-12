@@ -25,7 +25,7 @@ export const RecipeList = (props) => {
             <li key="listtop" className='list-group-item'>
               <div className="row">
                   <div className='col-3 col-sm-3 col-md-3'><strong>What do I have ?</strong></div>
-                  <div className='col-5 col-sm-5 col-md-6'><strong>Recipe Name</strong></div>
+                  <div className='col-5 col-sm-5 col-md-6 center'><strong>Recipe Name</strong></div>
                   <div className='col-4 col-sm-4 col-md-3'><strong>Favourite</strong></div>
               </div>
             </li>

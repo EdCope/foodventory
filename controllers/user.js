@@ -29,6 +29,9 @@ const UsersController = {
         if (!user.favourites.includes(req.body.favourite)) { 
           user.favourites.push(req.body.favourite)
           user.save()
+        } else {
+          user.favourites.pull(req.body.favourite)
+          user.save()
         }
     })
   },
