@@ -36,8 +36,8 @@ export const Pantry = () => {
     <div className='container-fluid'>
       <ConfirmationMessage message={message} />
       <div className='row'>
-        <div className='col-4'><ListIngredients ingredients={ingredients} loadList={loadList} setMessage={setMessage}/></div>
-        <div className='col-8'><SearchRecipe setMessage={setMessage} /></div>
+        <div className='col-sm-5 col-12 '><ListIngredients ingredients={ingredients} loadList={loadList} setMessage={setMessage}/></div>
+        <div className='col-sm-7 col-12 '><SearchRecipe setMessage={setMessage} /></div>
       
       
       </div>

@@ -53,7 +53,7 @@ export const SearchRecipe = (props) => {
     <div className="card mt-3">
       <div className="card-header">
         <div className="row pt-3 pb-3">
-          <div className="col-3">
+          <div className="col-sm-6 col-12 ">
           <button
             type="button"
             className="btn btn-success mt-2"

@@ -44,9 +44,9 @@ export const RecipeListItem = (props) => {
         onClick={handleChange}
       >
         <div className="row" >
-          <div className='col-3' id={`${recipe.recipe.label}-${i}`}>{test.length} / {recipe.recipe.ingredients.length} </div>
-          <div className='col-7' id={`${recipe.recipe.label}-${i}`}>{recipe.recipe.label}</div>
-          <div className='col-2' id={`${recipe.recipe.label}-${i}`}><AddToFavourites recipeId={recipe.recipe.uri.split("#")[1]} /></div>
+          <div className='col-3 col-sm-3' id={`${recipe.recipe.label}-${i}`}>{test.length} / {recipe.recipe.ingredients.length} </div>
+          <div className='col-7 col-sm-6' id={`${recipe.recipe.label}-${i}`}>{recipe.recipe.label}</div>
+          <div className='col-2 col-sm-3' id={`${recipe.recipe.label}-${i}`}><AddToFavourites recipeId={recipe.recipe.uri.split("#")[1]} /></div>
         </div>
         
   
