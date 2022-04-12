@@ -13,17 +13,17 @@ app.use(cors({ origin: true, credentials: true }));
 
 app.use(express.static(path.join(__dirname, "frontend/build")));
 
-app.get("*", (req, res) => {
-    let url = path.join(__dirname, "frontend/build", "index.html");
-    if (!url.startsWith("/app/"))
-      // since we're on local windows
-      url = url.substring(1);
-    res.sendFile(url);
-  });
-
 app.use('/', testRouter);
 app.use('/user', userRouter);
 app.use('/pantry', pantryRouter);
 app.use('/auth', authRouter);
+
+
+app.get("*", (req, res) => {
+    let url = path.join(__dirname, "frontend/build", "index.html");
+    res.sendFile(url);
+  });
+
+
 
 module.exports = app;
