@@ -12,6 +12,7 @@ export const SearchRecipe = (props) => {
       "input[name=checkbox]:checked"
     );
     if (ingredientsList.length === 0) {
+      document.getElementById("message").classList.remove("hidden")
       props.setMessage(`Please choose an ingredient to find a recipe.`);
   }
 }
