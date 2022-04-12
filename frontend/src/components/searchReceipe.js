@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RecipeList } from "./recipeList";
+import './searchReceipe.css'; 
+
 
 export const SearchRecipe = (props) => {
   const [recipes, setRecipes] = useState("");
@@ -88,21 +90,21 @@ export const SearchRecipe = (props) => {
           >
             Search For Recipes
           </button>
-          <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" role="switch" id="vegetarianSwitch" onChange={(e) => setVegetarian(e.target.checked)}/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Vegetarian</label>
+          <div class="custom-control custom-switch" id="veggie">
+          <input type="checkbox" class="custom-control-input" size="lg" id="vegetarian" onChange={(e) => setVegetarian(e.target.checked)}/>
+          <label class="custom-control-label" for="vegetarian">Vegetarian</label>
           </div>
-          <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" role="switch" id="glutenFreeSwitch" onChange={(e) => setGluten (e.target.checked)}/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Gluten Free</label>
+          <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="glutenFree" onChange={(e) => setGluten(e.target.checked)}/>
+          <label class="custom-control-label" for="glutenFree">Gluten Free</label>
           </div>
-          <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" role="switch" id="nutFreeSwitch" onChange={(e) => setNutFree (e.target.checked)}/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Nut Free</label>
+          <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="nutFree" onChange={(e) => setNutFree (e.target.checked)}/>
+          <label class="custom-control-label" for="nutFree">Nut Free</label>
           </div>
-          <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" role="switch" id="simpleSwitch" onChange={(e) => setSimple (e.target.checked)}/>
-            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Simple Recipes</label>
+          <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="simpleRecipes" onChange={(e) => setSimple (e.target.checked)}/>
+          <label class="custom-control-label" for="simpleRecipes">Simple Recipes</label>
           </div>
           </div>
         </div>
