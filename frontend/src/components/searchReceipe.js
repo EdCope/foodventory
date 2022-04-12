@@ -7,6 +7,7 @@ export const SearchRecipe = (props) => {
   const [submitMessage, setSubmitMessage] = useState("");
   const [ingredientsListArray, setIngredientsListArray] = useState([]);
   const [vegetarian, setVegetarian] = useState(false);
+  const [gluten, setGluten] = useState(false);
 
   const clickForMessage = (e) => {
     const ingredientsList = document.querySelectorAll(
@@ -42,8 +43,11 @@ export const SearchRecipe = (props) => {
       let searchUrl = `https://api.edamam.com/api/recipes/v2?type=public&q=${searchArray.join(
         "%20"
       )}&app_id=447fe925&app_key=144b9978b2320c00d31fe6fd33e6efbc&excluded=vinegar`;
-      if(vegetarian == true){
+      if(vegetarian === true){
         searchUrl = searchUrl + "&health=vegetarian"
+      }
+      if(gluten === true){
+        searchUrl = searchUrl + "&health=gluten-free"
       }
       // Url for searching the API - https://developer.edamam.com/edamam-docs-recipe-api
 
@@ -59,10 +63,6 @@ export const SearchRecipe = (props) => {
       });
     }
   };
-
-  const handleChange = (e) => {
-    setVegetarian(e.target.checked);
-  }
 
   useEffect(() => { 
     getListValue()
@@ -88,8 +88,12 @@ export const SearchRecipe = (props) => {
             Search For Recipes
           </button>
           <div className="form-check form-switch">
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={handleChange}/>
+            <input className="form-check-input" type="checkbox" role="switch" id="vegetarianSwitch" onChange={(e) => setVegetarian(e.target.checked)}/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Vegetarian</label>
+          </div>
+          <div className="form-check form-switch">
+            <input className="form-check-input" type="checkbox" role="switch" id="glutenFreeSwitch" onChange={(e) => setGluten (e.target.checked)}/>
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Gluten Free</label>
           </div>
           </div>
         </div>
