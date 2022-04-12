@@ -1,5 +1,4 @@
-
-
+import './listIngredients.css';
 import { DeleteIngredientButton } from "./deleteButton";
 import { AddIngredient } from '../components/addIngredient';
 
@@ -15,7 +14,7 @@ export const ListIngredients = (props) => {
       
       <div className="card-body">
         <div id="ingredients-list">
-          <h5>Whats in my Pantry?</h5>
+          <h5>What's in my Pantry?</h5>
           <ul className="list-group" id="ingredientsList">
             <li className="list-group-item">
               <div className="row">
