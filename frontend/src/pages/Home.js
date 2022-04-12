@@ -19,7 +19,9 @@ export const Home = () => {
   
   return (
     <>
-     <h1>Landing Page</h1>
+     <h1> PantryPal</h1>
+     <h1>Powered by us, made by you!</h1>
+
      <h4>{state.loggedIn}</h4>
     </>
   )
