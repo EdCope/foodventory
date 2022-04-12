@@ -1,9 +1,11 @@
-.App {
+.App{
   text-align: center;
+}
+  /*  */
   /* background-color: rgba(252, 130, 74, 0.103); */
   /* background-color: rgba(143, 213, 166, 0.183); */
-  /* background-color: rgba(183, 173, 207, 0.151); */
-}
+  /* background-color: rgba(183, 173, 207, 0.151); */ 
+ 
 
 .background {
   background-color: rgba(143, 213, 166, 0.183);
@@ -40,4 +42,21 @@
 
 .hidden {
   display: none;
+}
+
+.card-header {
+  background-color: #b7adcfff;
+}
+
+.red {
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
+
+.btn-center {
+  display: flex !important;
+  align-items: center !important;
 }

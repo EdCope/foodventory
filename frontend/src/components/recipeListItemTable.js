@@ -1,5 +1,3 @@
-import { AddToFavourites } from "./addToFavourites";
-
 export const RecipeListItemTable = (props) => {
   const { recipe } = props
 
@@ -26,9 +24,6 @@ export const RecipeListItemTable = (props) => {
           <td>{recipe.recipe.yield}</td>
           <td>
             <a href={recipe.recipe.url}>Link</a>
-          </td>
-          <td>
-            <AddToFavourites recipeId={recipe.recipe.uri.split("#")[1]} />
           </td>
         </tr>
       </tbody>
