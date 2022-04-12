@@ -21,6 +21,7 @@ export const Pantry = () => {
     if(user){
       axios.get(`http://localhost:8000/pantry/all/${user.uid}`).then((res) => {
       const data = res.data;
+      console.log(data)
       setIngredients( data );
     });
     }
