@@ -26,7 +26,7 @@ export const SignUpForm = () => {
     e.preventDefault();
     const hashedPassword = bcrypt.hashSync(password, salt);
     const postData = { email: email, password: hashedPassword };
-    axios.post(`http://localhost:8000/user/`, postData).then((res) => {
+    axios.post(`/user/`, postData).then((res) => {
       console.log(res);
       setEmail("");
       setPassword("");

@@ -23,7 +23,7 @@ export const LoginForm = () => {
   const submitHandler = (e) => {
     e.preventDefault()
     const postData = { email: email, password: password }
-    axios.post(`http://localhost:8000/auth/`, postData ).then((res) => {
+    axios.post(`/auth/`, postData ).then((res) => {
         console.log(res);
         const {auth, token, uid} = res.data;
         if(auth){

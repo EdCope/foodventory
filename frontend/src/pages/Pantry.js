@@ -19,7 +19,7 @@ export const Pantry = () => {
   const loadList = () => {
     const user = JSON.parse(localStorage.getItem('userdata'))
     if(user){
-      axios.get(`http://localhost:8000/pantry/all/${user.uid}`).then((res) => {
+      axios.get(`/pantry/all/${user.uid}`).then((res) => {
       const data = res.data;
       console.log(data)
       setIngredients( data );

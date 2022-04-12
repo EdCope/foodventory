@@ -5,7 +5,7 @@ export const DeleteIngredientButton = (props) => {
         e.preventDefault()
         const user = JSON.parse(localStorage.getItem('userdata'))
         const postData = {'ingredient': props.ingredient, 'user': user }
-        axios.post('http://localhost:8000/pantry/remove', postData).then((res) => { console.log(res)
+        axios.post('/pantry/remove', postData).then((res) => { console.log(res)
         props.loadList()
         props.setMessage(res.data.message)
         document.getElementById("message").classList.remove("hidden")
