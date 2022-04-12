@@ -9,8 +9,8 @@ const cors = require('cors');
 const app = express();
 
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
-app.use('/', testRouter);
 app.use('/user', userRouter);
 app.use('/pantry', pantryRouter);
 app.use('/auth', authRouter);
@@ -19,6 +19,8 @@ app.use('/auth', authRouter);
 app.use(express.static(path.join(__dirname, "frontend/build")));
 
 app.use(cors());
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 
 app.get("*", (req, res) => {
     let url = path.join(__dirname, "frontend/build", "index.html");
