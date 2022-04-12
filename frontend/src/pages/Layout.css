@@ -1,11 +1,20 @@
+
+#App {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center; 
+}
+
 .navbar {
   padding: 0;
 }
 
 #basic-navbar-nav {
-  background-color: #b7adcfff;
-  padding: 15px;
+  background-color: rgba(164, 210, 70, 0.994);
   max-width: none;
+  margin-bottom: 2rem;
+
 }
 
 #Sign-up {
