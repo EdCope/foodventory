@@ -14,7 +14,7 @@ export const Login = () => {
       setState(state => ({...state, loggedIn: user.auth}));
     }
     if(state.loggedIn){
-      navigate('/Pantry');
+      navigate('/mypantry');
     }
   }, [state.loggedIn])
 
