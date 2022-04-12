@@ -5,9 +5,6 @@
   /* background-color: rgba(183, 173, 207, 0.151); */
 }
 
-.background {
-  background-color: rgba(143, 213, 166, 0.183);
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

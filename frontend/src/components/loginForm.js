@@ -2,6 +2,8 @@ import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
 import { ConfirmationMessage } from './confirmationMessage';
 import GlobalState from '../contexts/GlobalState';
+import './loginForm.css';
+
 
 export const LoginForm = () => {
   
@@ -35,11 +37,13 @@ export const LoginForm = () => {
   }
 
   return (
-<div className="container">
+<div className="container" >
       <div className="row">
         <div className="col-3"></div>
 
         <div className="col-6">
+        <br></br>
+        <br></br>
 
         <h2>Log In</h2>
       <form onSubmit={submitHandler}>
@@ -65,7 +69,7 @@ export const LoginForm = () => {
 
           ></input>
         </div>
-        <button className="btn btn-primary" type="submit" id="sign-up-button">
+        <button className="btn btn" type="submit" id="sign-up-button">
           Log In
         </button>
       </form>
