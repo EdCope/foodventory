@@ -29,7 +29,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
-          <Route path="pantry" element={<Pantry />} />
+          <Route path="mypantry" element={<Pantry />} />
           <Route path="favourites" element={<Favourites />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>

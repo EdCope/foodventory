@@ -21,7 +21,7 @@ export const Layout = () => {
           <Nav className="me-auto">
             {!state.loggedIn && <Nav.Link id="Sign-up" href="/signup">Sign Up</Nav.Link>}
             {!state.loggedIn && <Nav.Link id="Log-in" href="/login">Log in</Nav.Link>}
-            {state.loggedIn && <Nav.Link id="My-pantry" href="/pantry">My Pantry</Nav.Link>}
+            {state.loggedIn && <Nav.Link id="My-pantry" href="/mypantry">My Pantry</Nav.Link>}
             {state.loggedIn && <Nav.Link id="Favourites" href="/favourites">Favourites</Nav.Link>}
             {state.loggedIn && <SignOutButton />}
           </Nav>
