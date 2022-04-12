@@ -17,7 +17,7 @@ export const AddIngredient = (props) => {
       props.setMessage('There are no ingredients with this name in the database')
     } else {
       console.log('this is the ingredient post Data', postData)
-      axios.post(`http://localhost:8000/pantry/add`, postData ).then((res) => {
+      axios.post(`/pantry/add`, postData ).then((res) => {
       setIngredient('')
       props.setMessage(res.data.message);
       props.loadList();

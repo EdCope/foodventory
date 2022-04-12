@@ -14,7 +14,7 @@ export const useProtected = () => {
       navigate('/');
     } else {
       const verifyUser = async () => {
-        const data = await axios.get(`http://localhost:8000/auth/verify`,
+        const data = await axios.get(`/auth/verify`,
         {headers: {'x-access-token': user.token}})
         return data.data;
       }
