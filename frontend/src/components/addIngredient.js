@@ -23,6 +23,7 @@ export const AddIngredient = (props) => {
       props.loadList();
     })
   }
+  document.getElementById("message").classList.remove("hidden")
     
   }
   return (
