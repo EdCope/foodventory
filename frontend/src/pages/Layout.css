@@ -14,10 +14,12 @@
   background-color: rgba(164, 210, 70, 0.994);
   max-width: none;
   margin-bottom: 2rem;
+  padding: 5px;
 
 }
 
 #Sign-up {
+  padding-left: 10px;
   color: black;
   font-size: larger;
   font-weight: bold;
@@ -32,6 +34,7 @@
 }
 
 #Log-in {
+  padding-left: 10px;
   color: black;
   font-size: larger;
   font-weight: bold;
@@ -40,6 +43,7 @@
 
 
 #Log-in:hover {
+  
   color: rgb(75, 72, 72);
   font-size: larger;
   font-weight: bold;
@@ -47,6 +51,7 @@
 }
 
 #My-pantry {
+  padding-left: 10px;
   color: black;
   font-size: larger;
   font-weight: bold;
@@ -61,6 +66,7 @@
 }
 
 #Favourites {
+  padding-left: 10px;
   color: black;
   font-size: larger;
   font-weight: bold;
@@ -72,4 +78,11 @@
   font-size: larger;
   font-weight: bold;
  
+}
+
+#pantrypal-brand {
+  color:  rgb(0, 0, 0);
+  padding-left: 10px;
+  font-size: x-large;
+  font-weight: bold;
 }

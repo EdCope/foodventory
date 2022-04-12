@@ -28,8 +28,8 @@ export const Favourites = () => {
     }, [])
 
   return (
-    <>
+    <div className='container'>
       <ListFavourites recipes={favouriteRecipes} />
-    </>
+    </div>
   )
 }

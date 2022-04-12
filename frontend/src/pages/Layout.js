@@ -15,7 +15,7 @@ export const Layout = () => {
     <>
     <Navbar expand="lg">
       <Container id="basic-navbar-nav">
-        <Navbar.Brand href="/">PantryPal</Navbar.Brand>
+        <Navbar.Brand id="pantrypal-brand" href="/">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="me-auto">

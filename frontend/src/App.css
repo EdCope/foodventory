@@ -68,3 +68,7 @@
   color: rgb(163, 210, 70) !important;
   font-weight: bold;
 }
+
+.btn-green {
+  background-color: rgb(163, 210, 70) !important;
+}

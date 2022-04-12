@@ -73,7 +73,7 @@ export const SearchRecipe = (props) => {
           <div className="col-sm-6 col-12 ">
           <button
             type="button"
-            className="btn btn-success mt-2"
+            className="btn btn-green mt-2"
             id="recipe-search"
             onClick={doubleClick}
           >
