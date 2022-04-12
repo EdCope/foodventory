@@ -28,7 +28,7 @@ export const SearchRecipe = (props) => {
     setIngredientsListArray(array);
 
     if (ingredientsList.length === 0) {
-      props.setMessage(`Please choose and ingredient to find a recipe.`);
+      props.setMessage(`Please choose an ingredient to find a recipe.`);
       setRecipes("");
     } else {
       // Url for searching the API - https://developer.edamam.com/edamam-docs-recipe-api
