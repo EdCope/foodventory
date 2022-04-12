@@ -34,7 +34,7 @@ export const AddIngredient = (props) => {
           <input className="form-control" type="text" name="ingredient" id="ingredient-input" value={ingredient} onChange={(e) => {setIngredient(e.target.value)}}></input>
           </div>
           <div className="col-md-2 col-sm-2 col-1">
-            <button className='btn btn-primary btn-center' id="ingredient-button" type="submit"><i class="fa-solid fa-carrot"> </i> Add</button>
+            <button className='btn btn-primary btn-center' id="ingredient-button" type="submit"><i className="fa-solid fa-carrot"> </i> Add</button>
           </div>
         </div>
       </form>

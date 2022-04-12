@@ -10,7 +10,7 @@ export const SearchRecipe = (props) => {
   
   const getListValue = (e) => {
     //   getListValue function gets all of the ingredients in the ingredients list by finding the checked boxes.
-    e.preventDefault();
+    //e.preventDefault();
     const ingredientsList = document.querySelectorAll(
       "input[name=checkbox]:checked"
     );
@@ -49,6 +49,10 @@ export const SearchRecipe = (props) => {
     }
   };
 
+  // useEffect(() => { 
+  //   getListValue()
+  // })
+
   return (
     <div className="card mt-3">
       <div className="card-header">
@@ -69,6 +73,7 @@ export const SearchRecipe = (props) => {
         recipes={recipes}
         submitMessage={submitMessage}
         ingredientsListArray={ingredientsListArray}
+        getListValue={getListValue}
       />
     </div>
   );

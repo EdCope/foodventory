@@ -14,9 +14,15 @@ export const AddToFavourites = (props) => {
 }
 checkExistingFavourites()
 
+const customClick = (e) => {
+  console.log(e)
+  clickHandler()
+  props.getListValue()
+}
+
 
   const clickHandler = (e) => {
-    e.preventDefault()
+    //e.preventDefault()
     const user = JSON.parse(localStorage.getItem('userdata'))
     const postData = {favourite: props.recipeId, user: user}
     axios.post(`http://localhost:8000/user/add`, postData ).then((res) => {
@@ -25,6 +31,6 @@ checkExistingFavourites()
   }
 
   return (
-    <i id="add-to-favourites" className={`fa-solid fa-heart ${style}`} onClick={clickHandler}></i>
+    <i id="add-to-favourites" className={`fa-solid fa-heart ${style}`} onClick={customClick}></i>
   )
 }

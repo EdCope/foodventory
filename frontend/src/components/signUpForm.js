@@ -44,7 +44,7 @@ export const SignUpForm = () => {
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="email-form"
             aria-describedby="emailHelp"
             value={email}
@@ -58,7 +58,7 @@ export const SignUpForm = () => {
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="password-form"
             value={password}
             onChange={handleChange}
