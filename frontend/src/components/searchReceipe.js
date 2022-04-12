@@ -7,6 +7,14 @@ export const SearchRecipe = (props) => {
   const [submitMessage, setSubmitMessage] = useState("");
   const [ingredientsListArray, setIngredientsListArray] = useState([]);
 
+  const clickForMessage = (e) => {
+    const ingredientsList = document.querySelectorAll(
+      "input[name=checkbox]:checked"
+    );
+    if (ingredientsList.length === 0) {
+      props.setMessage(`Please choose an ingredient to find a recipe.`);
+  }
+}
   
   const getListValue = (e) => {
     //   getListValue function gets all of the ingredients in the ingredients list by finding the checked boxes.
@@ -28,7 +36,6 @@ export const SearchRecipe = (props) => {
     setIngredientsListArray(array);
 
     if (ingredientsList.length === 0) {
-      props.setMessage(`Please choose an ingredient to find a recipe.`);
       setRecipes("");
     } else {
       // Url for searching the API - https://developer.edamam.com/edamam-docs-recipe-api
@@ -53,6 +60,11 @@ export const SearchRecipe = (props) => {
     getListValue()
   }, [])
 
+  const doubleClick = () => {
+    clickForMessage()
+    getListValue()
+  }
+
   return (
     <div className="card mt-3">
       <div className="card-header">
@@ -62,7 +74,7 @@ export const SearchRecipe = (props) => {
             type="button"
             className="btn btn-success mt-2"
             id="recipe-search"
-            onClick={getListValue}
+            onClick={doubleClick}
           >
             Search For Recipes
           </button>
