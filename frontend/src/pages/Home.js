@@ -19,10 +19,13 @@ export const Home = () => {
   
   return (
     <>
-     <h1> PantryPal</h1>
-     <h1>Powered by us, made by you!</h1>
+    <div className='center mt-5 pt-5'>
+    <h1>PantryPal</h1>
+     <h2>Powered by us, made by you!</h2>
 
      <h4>{state.loggedIn}</h4>
+    </div>
+
     </>
   )
 };

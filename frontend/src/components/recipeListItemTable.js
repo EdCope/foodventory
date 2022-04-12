@@ -5,9 +5,9 @@ export const RecipeListItemTable = (props) => {
     <table className="table">
       <thead>
         <tr>
-          <th scope="col">Time</th>
+          <th scope="col">Time (mins)</th>
           <th scope="col">Calories</th>
-          <th scope="col">Yield</th>
+          <th scope="col">Portions</th>
           <th scope="col">Link</th>
           {/* <th scope='col'>Favourite</th> */}
         </tr>

@@ -57,31 +57,31 @@ export const RecipeListItem = (props) => {
   
         <div id={`${recipe.recipe.label}-${i}`} className='hidden mt-3'>
           <div className='row'>
-            <div className='col-2'>
+            <div className='col-2 col-md-3 col-sm-4'>
               <img
                 src={recipe.recipe.images.THUMBNAIL.url}
                 alt='food'
               ></img>
             </div>
-            <div className='col-10'>
+            <div className='col-10 col-md-9 col-sm-12'>
               <RecipeListItemTable recipe={recipe} />
             </div>
           </div>
-          <p>
-            Ingredients:{' '}
-            {recipe.recipe.ingredients
-              .map(
-                (ingredient, i) =>
-                  //recipeArray.push(ingredient.food[0].toLowerCase())
-                  `${
-                    ingredient.food[0].toUpperCase() +
-                    ingredient.food.slice(1).toLowerCase()
-                  }-${ingredient.weight.toLocaleString(undefined, {
-                    maximumFractionDigits: 2,
-                  })}g`
-              )
-              .join(', ')}
-          </p>
+          <div className="row">
+                      <div className="col-md-3 col-sm-4 col-2 pr-1">Ingredients:</div>
+                      <div className="col">
+                        {recipe.recipe.ingredients.map((ingredient, i) => (
+                          <p>
+                            {`${
+                              ingredient.food[0].toUpperCase() +
+                              ingredient.food.slice(1).toLowerCase()
+                            } - ${ingredient.weight.toLocaleString(undefined, {
+                              maximumFractionDigits: 0,
+                            })}g`}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
         </div>
       </li>
     );
