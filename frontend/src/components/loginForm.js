@@ -41,12 +41,12 @@ export const LoginForm = () => {
       <div className="row">
         <div className="col-3"></div>
 
-        <div className="col-6">
+        <div className="col-6 form-div">
         <br></br>
         <br></br>
 
         <h2>Log In</h2>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler}> 
         <div className="form-group">
           <label htmlFor="email-form">Email address</label>
           <input
@@ -69,10 +69,11 @@ export const LoginForm = () => {
 
           ></input>
         </div>
-        <button className="btn btn" type="submit" id="sign-up-button">
+        <button className="btn btn-sm" type="submit" id="sign-up-button">
           Log In
         </button>
       </form>
+      <p>Not got an account? <a href="/signup" id="form-links">Sign Up here</a></p>
         </div>
 
         <div className="col-3"></div>

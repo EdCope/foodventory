@@ -40,8 +40,9 @@ export const SignUpForm = () => {
       <div className="row">
         <div className="col-3"></div>
 
-        <div className="col-6">
-
+        <div className="col-6 form-div">
+        <br></br>
+        <br></br>
         <h2>Sign Up</h2>
       <form onSubmit={submitHandler}>
         <div className="form-group">
@@ -54,7 +55,7 @@ export const SignUpForm = () => {
             value={email}
             onChange={handleChange}
           ></input>
-          <small id="emailHelp" className="form-text text-muted">
+          <small id="emailHelp" className="form-text">
             We'll never share your email with anyone else.
           </small>
         </div>
@@ -69,10 +70,11 @@ export const SignUpForm = () => {
             minlength="5"
           ></input>
         </div>
-        <button className="btn btn-primary" type="submit" id="sign-up-button">
+        <button className="btn" type="submit" id="sign-up-button">
           Sign up
         </button>
       </form>
+      <p>Got an account? <a href="/login" id="form-links">Log In here</a></p>
         </div>
 
         <div className="col-3"></div>

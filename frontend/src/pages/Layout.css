@@ -18,28 +18,57 @@
 }
 
 #Sign-up {
-  color: white;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+#Sign-up:hover {
+  color: rgb(75, 72, 72);
   font-size: larger;
   font-weight: bold;
  
 }
 
 #Log-in {
-  color: white;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+
+#Log-in:hover {
+  color: rgb(75, 72, 72);
   font-size: larger;
   font-weight: bold;
  
 }
 
 #My-pantry {
-  color: white;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+#My-pantry:hover {
+  color: rgb(75, 72, 72);
   font-size: larger;
   font-weight: bold;
  
 }
 
 #Favourites {
-  color: white;
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+ 
+}
+
+#Favourites:hover {
+  color: rgb(75, 72, 72);
   font-size: larger;
   font-weight: bold;
  
