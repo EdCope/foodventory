@@ -18,6 +18,7 @@ export const Signup = () => {
     }
   }, [state.loggedIn])
 
-  return 
-  <SignUpForm />
+  return (
+    <SignUpForm />
+  )
 }
