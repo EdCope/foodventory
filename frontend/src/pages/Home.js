@@ -12,7 +12,7 @@ export const Home = () => {
       setState(state => ({...state, loggedIn: user.auth}));
     }
     if(state.loggedIn){
-      navigate('/Pantry');
+      navigate('/mypantry');
     }
   }, [])
 
