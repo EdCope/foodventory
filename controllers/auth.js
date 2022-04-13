@@ -10,14 +10,14 @@ const AuthController = {
       const {email, password} = req.body      
       const user = await User.findOne({ email: email})
       const passMatches = await bcrypt.compare(password, user.password)
-      if(passMatches){
+      if(passMatches && user){
         const id = user._id
         const token = jwt.sign({id}, 'secretForTesting', {
           expiresIn: '1h'
         })
         res.json({auth: true, token: token, uid: id, 'message': 'Logged in'});
-      }else {
-        res.json({message: 'Incorrect Password'});
+      } else {
+        res.json({'message': 'Incorrect email or password'});
       }
     } catch (err) {
       res.json({'message': err})

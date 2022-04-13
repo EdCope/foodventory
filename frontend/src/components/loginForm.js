@@ -32,10 +32,10 @@ export const LoginForm = () => {
         }
         setEmail('');
         setPassword('')
-        setMessage(res.data.message);
+        setMessage(res.data.message.message);
       })
   }
-
+console.log('message is',message)
   return (
 <div className="container" >
       <div className="row">
