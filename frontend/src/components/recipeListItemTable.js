@@ -22,7 +22,7 @@ export const RecipeListItemTable = (props) => {
           </td>
           <td>{recipe.recipe.yield}</td>
           <td>
-            <a href={recipe.recipe.url}>Link</a>
+            <a href={recipe.recipe.url} target="_blank">Link</a>
           </td>
         </tr>
       </tbody>
