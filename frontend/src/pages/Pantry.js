@@ -36,7 +36,7 @@ export const Pantry = () => {
   
   return (
     <div className='container-fluid'>
-      <div className='row'>
+      <div className='row mb-2'>
         <div className='col'>
         <div id='instruction' className='card center vertical-align pt-1'><h5>Welcome to PantryPal! To get started add the contents of your pantry, select the ingredients and search for a recipe!</h5></div>
         </div>

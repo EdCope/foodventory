@@ -32,7 +32,8 @@ export const LoginForm = () => {
         }
         setEmail('');
         setPassword('')
-        setMessage(res.data.message.message);
+        setMessage(res.data.message);
+        document.getElementById("message").classList.remove("hidden");
       })
   }
 console.log('message is',message)
@@ -73,13 +74,14 @@ console.log('message is',message)
           Log In
         </button>
       </form>
-      <p>Not got an account? <a href="/signup" id="form-links">Sign Up here</a></p>
+      <p>Not got an account? <a href="/signup" id="form-links">Sign Up here</a></p><br />
+        <ConfirmationMessage message={message} />
         </div>
 
         <div className="col-3"></div>
       </div>
 
-      <ConfirmationMessage message={message} />
+      
     </div>
   )
 }
