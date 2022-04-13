@@ -1,0 +1,22 @@
+
+.custom-control {
+  position: relative;
+  margin-top: 5px;  
+  size: large;
+  border-radius: 50%;
+}
+
+.custom-control-label::before {
+  background-color: #ba324fff;
+  border-color: #ba324fff;
+}
+
+.custom-switch .custom-control-label::after {
+  background-color: white;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  background-color: yellowgreen;
+  border-color: yellowgreen;
+}
+
