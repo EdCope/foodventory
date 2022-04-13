@@ -20,10 +20,10 @@ export const Home = () => {
   
   return (
     <>
-    <div className='center mt-5 pt-5'>
-    <h1>PantryPal</h1>
-     <h2>Powered by us, made by you!</h2>
-    <img src="pantrypal-logo.PNG" alt="pantrypal-logo" id="logo-home" width="220" height="250"></img>
+    <div  className='center mt-5 pt-5'>
+    <p id='landingPage'>PantryPal</p>
+    <p id='slogan'>Powered by us, made by you!</p>
+    <img src="pantrypal-logo.PNG" alt="pantrypal-logo" id="logo-home" width="300"></img>
 
      <h4>{state.loggedIn}</h4>
     </div>

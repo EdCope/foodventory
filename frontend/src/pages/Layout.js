@@ -15,15 +15,18 @@ export const Layout = () => {
     <>
     <Navbar expand="lg">
       <Container id="basic-navbar-nav">
-      <img src="pantrypal-logo.PNG" alt="pantrypal-logo" width="50" height="50"></img>
+      <img id="brand-logo" src="pantrypal-logo-black.PNG" alt="pantrypal-logo" width="50" height="50"></img>
         <Navbar.Brand id="pantrypal-brand" href="/">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
-          <Nav className="me-auto">
+          <Nav className="ml-auto">
             {!state.loggedIn && <Nav.Link id="Sign-up" href="/signup">Sign Up</Nav.Link>}
+            {!state.loggedIn && <div class="vl"></div> }
             {!state.loggedIn && <Nav.Link id="Log-in" href="/login">Log in</Nav.Link>}
             {state.loggedIn && <Nav.Link id="My-pantry" href="/mypantry">My Pantry</Nav.Link>}
+            {state.loggedIn && <div class="vl"></div> }
             {state.loggedIn && <Nav.Link id="Favourites" href="/favourites">Favourites</Nav.Link>}
+            {state.loggedIn && <div class="vl"></div> }
             {state.loggedIn && <SignOutButton />}
           </Nav>
         </Navbar.Collapse>
