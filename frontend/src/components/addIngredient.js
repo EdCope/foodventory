@@ -27,12 +27,13 @@ export const AddIngredient = (props) => {
     
   }
   return (
+    <>
     <div id="input-form">
       <div className="card-body">
       <form onSubmit={submitHandler} id="ingredient-form">
         <div className="form-row">
           <div className="col-md-10 col-sm-10 col-10">
-          <input className="form-control" type="text" name="ingredient" placeholder="Enter ingredients..." id="ingredient-input" value={ingredient} onChange={(e) => {setIngredient(e.target.value)}}></input>
+          <input className="form-control" type="text" name="ingredient" placeholder="Add to your pantry..." id="ingredient-input" value={ingredient} onChange={(e) => {setIngredient(e.target.value)}}></input>
           </div>
           <div className="col-md-2 col-sm-2 col-1">
             <button className='btn btn-green btn-center' id="ingredient-button" type="submit"><i className="fa-solid fa-carrot"> </i> Add</button>
@@ -41,5 +42,6 @@ export const AddIngredient = (props) => {
       </form>
       </div>
     </div>
+    </>
   )
   }
