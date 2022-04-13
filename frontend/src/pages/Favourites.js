@@ -13,7 +13,7 @@ export const Favourites = () => {
     useEffect(() => {
       const loadFavourites = () => {
   
-        axios.get(`http://localhost:8000/user/favourites/${user.uid}`).then((res) => {
+        axios.get(`/user/favourites/${user.uid}`).then((res) => {
           console.log('the favourites returned are:', res.data)
           const data = res.data;
           data.map(recipe => {

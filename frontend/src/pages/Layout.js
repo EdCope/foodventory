@@ -32,18 +32,6 @@ export const Layout = () => {
 
     <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin='anonymous'></script>
 
-    <div className="App m-3 p-3" id="App">
-      <header className="App-header">
-        {/* <div>
-          <h4>
-            Pantrypal
-          </h4>
-          <h5>
-            Powered by us, made by you!
-          </h5>
-        </div> */}
-      </header>
-    </div>
     <Outlet />
     </>
   )

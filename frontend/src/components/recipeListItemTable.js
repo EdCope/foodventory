@@ -9,7 +9,6 @@ export const RecipeListItemTable = (props) => {
           <th scope="col">Calories</th>
           <th scope="col">Portions</th>
           <th scope="col">Link</th>
-          {/* <th scope='col'>Favourite</th> */}
         </tr>
       </thead>
       <tbody>
@@ -23,7 +22,7 @@ export const RecipeListItemTable = (props) => {
           </td>
           <td>{recipe.recipe.yield}</td>
           <td>
-            <a href={recipe.recipe.url}>Link</a>
+            <a href={recipe.recipe.url} target="_blank">Link</a>
           </td>
         </tr>
       </tbody>
