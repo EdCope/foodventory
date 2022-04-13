@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { RecipeList } from "./recipeList";
-import './searchReceipe.css'; 
-
+import './searchRecipe.css'; 
 
 export const SearchRecipe = (props) => {
   const [recipes, setRecipes] = useState("");
