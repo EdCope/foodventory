@@ -77,7 +77,7 @@ export const SearchRecipe = (props) => {
   }
 
   return (
-    <div className="card mt-3">
+    <div className="card mt-1">
       <div className="card-header">
         <div className="row pt-1">
           <div className="col-sm-6 col-12 ">
@@ -93,21 +93,21 @@ export const SearchRecipe = (props) => {
         </div>
         <div className="row pl-3">
 
-<div class="custom-control custom-switch col-3" id="veggie">
-<input type="checkbox" class="custom-control-input" size="lg" id="vegetarian" onChange={(e) => setVegetarian(e.target.checked)}/>
-<label class="custom-control-label" for="vegetarian">Vegetarian</label>
+<div className="custom-control custom-switch col-3" id="veggie">
+<input type="checkbox" className="custom-control-input" size="lg" id="vegetarian" onChange={(e) => setVegetarian(e.target.checked)}/>
+<label className="custom-control-label" htmlFor="vegetarian">Vegetarian</label>
 </div>
-<div class="custom-control custom-switch col-3">
-<input type="checkbox" class="custom-control-input" id="glutenFree" onChange={(e) => setGluten(e.target.checked)}/>
-<label class="custom-control-label" for="glutenFree">Gluten Free</label>
+<div className="custom-control custom-switch col-3">
+<input type="checkbox" className="custom-control-input" id="glutenFree" onChange={(e) => setGluten(e.target.checked)}/>
+<label className="custom-control-label" htmlFor="glutenFree">Gluten Free</label>
 </div>
-<div class="custom-control custom-switch col-3">
-<input type="checkbox" class="custom-control-input" id="nutFree" onChange={(e) => setNutFree (e.target.checked)}/>
-<label class="custom-control-label" for="nutFree">Nut Free</label>
+<div className="custom-control custom-switch col-3">
+<input type="checkbox" className="custom-control-input" id="nutFree" onChange={(e) => setNutFree (e.target.checked)}/>
+<label className="custom-control-label" htmlFor="nutFree">Nut Free</label>
 </div>
-<div class="custom-control custom-switch col-3">
-<input type="checkbox" class="custom-control-input" id="simpleRecipes" onChange={(e) => setSimple (e.target.checked)}/>
-<label class="custom-control-label" for="simpleRecipes">Simple Recipes</label>
+<div className="custom-control custom-switch col-3">
+<input type="checkbox" className="custom-control-input" id="simpleRecipes" onChange={(e) => setSimple (e.target.checked)}/>
+<label className="custom-control-label" htmlFor="simpleRecipes">Simple Recipes</label>
 </div>
 
 </div>

@@ -7,7 +7,7 @@ export const ListIngredients = (props) => {
 
 
   return (
-    <div className="card mt-3">
+    <div className="card mt-1">
         <div className="card-header">
         <AddIngredient loadList={props.loadList} setMessage={props.setMessage} />
         </div>
