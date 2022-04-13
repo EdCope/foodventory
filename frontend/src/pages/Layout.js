@@ -15,6 +15,7 @@ export const Layout = () => {
     <>
     <Navbar expand="lg">
       <Container id="basic-navbar-nav">
+      <img src="pantrypal-logo.PNG" alt="pantrypal-logo" width="50" height="50"></img>
         <Navbar.Brand id="pantrypal-brand" href="/">PantryPal</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>

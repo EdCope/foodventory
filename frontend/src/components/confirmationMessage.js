@@ -13,13 +13,16 @@ export const ConfirmationMessage = (props) => {
   } else if(props.message.includes("choose")){
     alertStatus = 'danger'
     return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
+  } else if(props.message.includes("password")){
+    alertStatus = 'danger'
+    return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
   } else if(props.message.includes("already")){
     alertStatus = 'warning'
     return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
   } else if(props.message.includes("There are no ingredients")){
     alertStatus = 'warning'
     return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={""}/>
-  }
+  } 
   else{
       alertStatus = ''
       return <DynamicMessage message={props.message} alertStatus={alertStatus} classChange={"hidden"} />
