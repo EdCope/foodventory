@@ -32,13 +32,13 @@ export const ListFavourites = (props) => {
                     className="hidden mt-3"
                   >
                     <div className="row">
-                      <div className="col-sm-4 col-2">
+                      <div className="col-sm-2 col-md-2 col-2">
                         <img
                           src={recipe.recipe.images.THUMBNAIL.url}
                           alt="food"
                         ></img>
                       </div>
-                      <div className="col-10 col-sm-12">
+                      <div className="col-12 col-md-10 col-sm-12">
                         <table className="table">
                           <thead>
                             <tr>
@@ -62,9 +62,6 @@ export const ListFavourites = (props) => {
                               <td>{recipe.recipe.yield}</td>
                               <td>
                                 <a href={recipe.recipe.url}>Link</a>
-                              </td>
-                              <td>
-                                {/* <AddToFavourites recipeId={recipe.recipe.uri.split('#')[1]}/> */}
                               </td>
                             </tr>
                           </tbody>
