@@ -32,13 +32,14 @@ export const ListFavourites = (props) => {
                     className="hidden mt-3"
                   >
                     <div className="row">
-                      <div className="col-sm-2 col-md-2 col-2">
+                      <div className="col-sm-3 col-md-3 col-3">
                         <img
-                          src={recipe.recipe.images.THUMBNAIL.url}
+                        className="not-centered"
+                          src={recipe.recipe.images.SMALL.url}
                           alt="food"
                         ></img>
                       </div>
-                      <div className="col-12 col-md-10 col-sm-12">
+                      <div className="col-12 col-md-9 col-sm-12">
                         <table className="table">
                           <thead>
                             <tr>
@@ -66,11 +67,9 @@ export const ListFavourites = (props) => {
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-sm-3 col-2 pr-1">Ingredients:</div>
-                      <div className="col">
+                        <div className="row">
+                      <div className="col-sm-3 col-2 col-md-2 pr-1 not-centered border-right border-left border-top border-bottom"><strong>Ingredients:</strong></div>
+                      <div className="col not-centered border-right border-top border-bottom">
                         {recipe.recipe.ingredients.map((ingredient, i) => (
                           <p>
                             {`${
@@ -83,6 +82,9 @@ export const ListFavourites = (props) => {
                         ))}
                       </div>
                     </div>
+                      </div>
+                    </div>
+
                   </div>
                 </li>
               );

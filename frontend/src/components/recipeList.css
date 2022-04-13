@@ -13,3 +13,8 @@
 .mt-3 {
   cursor: default;
 }
+
+.not-centered {
+  text-align: left;
+  float:left;
+}
