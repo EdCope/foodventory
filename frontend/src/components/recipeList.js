@@ -20,13 +20,13 @@ export const RecipeList = (props) => {
     return (
       <>
         <div className='card-body'>
-          <h5>What recipes can I make?  <small> {props.submitMessage} </small></h5>
+          <h5><small> {props.submitMessage} </small></h5>
           <ul className='list-group' id='recipe-list'>
             <li key="listtop" className='list-group-item'>
               <div className="row">
-                  <div className='col-3 col-sm-3 col-md-3'><strong>What do I have ?</strong></div>
-                  <div className='col-5 col-sm-5 col-md-6'><strong>Recipe Name</strong></div>
-                  <div className='col-4 col-sm-4 col-md-3'><strong>Favourite</strong></div>
+                  <div className='col-3 col-sm-3 col-md-3'><strong>I have...</strong></div>
+                  <div className='col-5 col-sm-5 col-md-6'><strong>Dish</strong></div>
+                  <div className='col-4 col-sm-4 col-md-3'><strong>Add to favourites?</strong></div>
               </div>
             </li>
             {list.map((recipe, i) => {

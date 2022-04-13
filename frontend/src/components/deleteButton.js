@@ -1,4 +1,5 @@
 import axios from "axios"
+import './deleteButton.css';
 
 export const DeleteIngredientButton = (props) => {
     const clickHandler= (e) => { 
