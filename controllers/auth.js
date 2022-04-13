@@ -17,7 +17,7 @@ const AuthController = {
         })
         res.json({auth: true, token: token, uid: id, 'message': 'Logged in'});
       }else {
-        res.json({message: 'Incorrect Password'});
+        res.json({"message": 'Incorrect Password'});
       }
     } catch (err) {
       res.json({'message': err})

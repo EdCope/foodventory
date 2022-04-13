@@ -12,6 +12,8 @@ export const Login = () => {
     const user = JSON.parse(localStorage.getItem('userdata'))
     if(user){
       setState(state => ({...state, loggedIn: user.auth}));
+    } else {
+      
     }
     if(state.loggedIn){
       navigate('/mypantry');

@@ -57,19 +57,18 @@ export const RecipeListItem = (props) => {
   
         <div id={`${recipe.recipe.label}-${i}`} className='hidden mt-3'>
           <div className='row'>
-            <div className='col-2 col-md-3 col-sm-4'>
+            <div className='col-12 col-md-4 col-sm-4'>
               <img
-                src={recipe.recipe.images.THUMBNAIL.url}
+                src={recipe.recipe.images.SMALL.url}
                 alt='food'
               ></img>
             </div>
-            <div className='col-10 col-md-9 col-sm-12'>
+            <div className='col-12 col-md-8 col-sm-12'>
               <RecipeListItemTable recipe={recipe} />
-            </div>
-          </div>
-          <div className="row">
-                      <div className="col-md-3 col-sm-4 col-2 pr-1">Ingredients:</div>
-                      <div className="col">
+
+              <div className="row pl-1">
+                      <div className="col-md-3 col-sm-4 col-2 p-1 border-right border-left border-top border-bottom">Ingredients:</div>
+                      <div className="col not-centered border-right border-top border-bottom">
                         {recipe.recipe.ingredients.map((ingredient, i) => (
                           <p>
                             {`${
@@ -81,7 +80,10 @@ export const RecipeListItem = (props) => {
                           </p>
                         ))}
                       </div>
-                    </div>
+          </div>
+            </div>
+          </div>
+
         </div>
       </li>
     );
