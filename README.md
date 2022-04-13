@@ -1,6 +1,21 @@
-# PantryPal
+# PantryPal 🌶 🥕 🥦 🍅 🧅
 
 PantryPal is an app that allows users to add the contents of their kitchen and find recipes based on those contents. It can allow users to add their own recipes as well as browse some from the internet, and can convert between imperial and metric measurements. It alerts you when you're missing ingredients for a specific recipe
+
+## Contributors
+- [Ed Cope](https://github.com/EdCope) 🍔
+- [Camilla Greene](https://github.com/cdoesprogramming) 🥘
+- [Jack Winterschladen](https://github.com/winters145) 🌭
+- [Trushna Rabadia](https://github.com/trushnarabadia)🍝
+- [Tim Ogilvie-Harris](https://github.com/breadmaking) 🌮
+
+## Planning and Ideation
+We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was adding and listing the contents of your pantry.
+
+![Wire-frame of app](https://user-images.githubusercontent.com/79770615/163233716-c1c5f6e6-27c9-4d94-a119-748dcc77f555.png)
+
+![Mindmapping features to implement](https://user-images.githubusercontent.com/79770615/163235024-c52dcf75-8726-464d-8010-ebd4e45c9e5b.png)
+![Retro](https://user-images.githubusercontent.com/79770615/163233503-537bfd62-895e-468b-ac11-dca76ed3f6f6.png)
 
 ## MVP
 
