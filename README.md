@@ -1,13 +1,33 @@
 # PantryPal 🌶 🥕 🥦 🍅 🧅
 
-PantryPal is an app that allows users to add the contents of their kitchen and find recipes based on those contents. It can allow users to add their own recipes as well as browse some from the internet, and can convert between imperial and metric measurements. It alerts you when you're missing ingredients for a specific recipe
+Ever wondered, what should I eat for dinner tonight?
+
+PantryPal takes the pain out of meal planning by allowing you to add the contents of your kitchen and generate recipes based on the ingredients that you have. It introduces you to new recipes & reduces food waste by using up what you already have. With PantryPal you can add ingredients, select the ones you'd like to use to create your meal and see a list of recipes available for you to make. Recipes can be filtered for dietary requirements such as vegetarian, gluten-free and nut-free. You can also filter recipes based on simplicity and receive a range of recipes that use no more that 6 ingredients.
 
 ## Contributors
-- [Ed Cope](https://github.com/EdCope) 🍔
-- [Camilla Greene](https://github.com/cdoesprogramming) 🥘
-- [Jack Winterschladen](https://github.com/winters145) 🌭
-- [Trushna Rabadia](https://github.com/trushnarabadia)🍝
-- [Tim Ogilvie-Harris](https://github.com/breadmaking) 🌮
+:hamburger: [Ed Cope](https://github.com/EdCope) 
+
+:fries: [Camilla Greene](https://github.com/cdoesprogramming) 
+
+🌭 [Jack Winterschladen](https://github.com/winters145) 
+
+:pizza: [Trushna Rabadia](https://github.com/trushnarabadia)
+
+🌮 [Tim Ogilvie-Harris](https://github.com/breadmaking) 
+
+## How to use PantryPal
+
+The PantryPal team created this app with the goal of solving the daily dilemma: what should I eat for dinner tonight?
+
+- Click on this [link to our app](https://pantrypal2022.herokuapp.com/) and create an account through the Sign-Up page.
+- Once signed up and logged in you will see your pantry.
+- Here, you can add the ingredients, you currently have in your kitchen, into your pantry and keep track of what you have.
+- When you have finished adding your ingredients, click on those that you would like to make a meal with.
+- Next, click on the 'Search for recipes' button and PantryPal will generate 20 recipes available for you to make.
+- Toggle the switches above each recipe to filter for dietary requirements and simplicity.
+- Find a recipe that you like? Click on the heart button to add it to your favourites.
+- Now, you're ready to begin making your fresh and delicious meal.
+<img width="1440" alt="Screenshot 2022-04-14 at 09 55 47" src="https://user-images.githubusercontent.com/79770615/163350706-4a1f6df5-20fb-4eed-b3b5-bc304cf9b98f.png">
 
 ## Planning and Ideation
 We began by mind-mapping multiple ideas and potential features, narrowing down our Minimum Viable Product which was adding and listing the contents of your pantry.
