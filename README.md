@@ -21,10 +21,10 @@ The PantryPal team created this app with the goal of solving the daily dilemma: 
 
 - Click on this [link to our app](https://pantrypal2022.herokuapp.com/) and create an account through the Sign-Up page.
 - Once signed up and logged in you will see your pantry.
-- Here, you can add the ingredients, you currently have in your kitchen, into your pantry and keep track of what you have.
+- Here, you can add the ingredients you currently have in your kitchen into your pantry and keep track of what you have.
 - When you have finished adding your ingredients, click on those that you would like to make a meal with.
 - Next, click on the 'Search for recipes' button and PantryPal will generate 20 recipes available for you to make.
-- Toggle the switches above each recipe to filter for dietary requirements and simplicity.
+- Toggle the switches above the recipes to filter for dietary requirements and simplicity.
 - Find a recipe that you like? Click on the heart button to add it to your favourites.
 - Now, you're ready to begin making your fresh and delicious meal.
 <img width="1440" alt="Screenshot 2022-04-14 at 09 55 47" src="https://user-images.githubusercontent.com/79770615/163350706-4a1f6df5-20fb-4eed-b3b5-bc304cf9b98f.png">
