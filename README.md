@@ -2,7 +2,10 @@
 
 Ever wondered, what should I eat for dinner tonight?
 
-PantryPal takes the pain out of meal planning by allowing you to add the contents of your kitchen and generate recipes based on the ingredients that you have. It introduces you to new recipes & reduces food waste by using up what you already have. With PantryPal you can add ingredients, select the ones you'd like to use to create your meal and see a list of recipes available for you to make. Recipes can be filtered for dietary requirements such as vegetarian, gluten-free and nut-free. You can also filter recipes based on simplicity and receive a range of recipes that use no more that 6 ingredients.
+PantryPal takes the pain out of meal planning by allowing you to add the contents of your kitchen and generate recipes based on the ingredients that you have. It introduces you to new recipes & reduces food waste by using up what you already have. With PantryPal you can add ingredients, select the ones you'd like to use to create your meal and see a list of recipes available for you to make. Recipes can be filtered for dietary requirements such as vegetarian, gluten-free and nut-free. You can also filter recipes based on simplicity and receive a range of recipes that use no more that 6 ingredients. Watch the team present the app here:
+
+
+[![Watch our presentation here](http://img.youtube.com/vi/ZpxTEQP0Goo/0.jpg)](http://www.youtube.com/watch?v=ZpxTEQP0Goo)
 
 ## Contributors
 :hamburger: [Ed Cope](https://github.com/EdCope) 
